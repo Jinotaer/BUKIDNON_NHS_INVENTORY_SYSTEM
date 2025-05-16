@@ -166,7 +166,7 @@ require_once('partials/_head.php');
                     // Get one item from this ICS to display as an example
                     $item_query = "SELECT ii.ics_item_id, i.item_id, ii.quantity, i.unit, 
                                     i.unit_cost, (ii.quantity * i.unit_cost) as total_amount,
-                                    i.item_description, ii.inventory_item_no, i.estimated_useful_life,
+                                    i.item_description, ii.inventory_item_no, ii.estimated_useful_life,
                                     ii.remarks
                                   FROM ics_items ii
                                   JOIN items i ON ii.item_id = i.item_id

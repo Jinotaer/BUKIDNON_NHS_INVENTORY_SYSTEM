@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2025 at 02:27 PM
+-- Generation Time: May 16, 2025 at 07:49 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -123,7 +123,7 @@ INSERT INTO `iar_items` (`iar_item_id`, `iar_id`, `item_id`, `quantity`, `unit_p
 (77, 68, 206, 2, 600.00, 1200.00, 'Non-Consumable', '2025-05-02 14:53:43'),
 (78, 69, 207, 2, 2800.00, 5600.00, 'Non-Consumable', '2025-05-02 14:56:24'),
 (79, 69, 208, 22, 400.00, 8800.00, 'Non-Consumable', '2025-05-02 14:56:24'),
-(80, 70, 209, 3, 1300.00, 3900.00, 'Non-consumable', '2025-05-02 14:58:27'),
+(80, 70, 209, 3, 1300.00, 3900.00, 'Non-consumables', '2025-05-02 14:58:27'),
 (81, 70, 210, 4, 950.00, 3800.00, 'Consumable', '2025-05-02 14:58:27'),
 (84, 73, 217, 52321, 2133.00, 99999999.99, 'Non-Consumable', '2025-05-16 03:41:04'),
 (85, 74, 218, 2, 23000.00, 46000.00, '', '2025-05-16 07:18:43');
@@ -141,6 +141,7 @@ CREATE TABLE `ics_items` (
   `quantity` int(11) NOT NULL,
   `article` varchar(255) NOT NULL,
   `remarks` text NOT NULL,
+  `estimated_useful_life` int(11) DEFAULT NULL,
   `inventory_item_no` varchar(50) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -149,22 +150,22 @@ CREATE TABLE `ics_items` (
 -- Dumping data for table `ics_items`
 --
 
-INSERT INTO `ics_items` (`ics_item_id`, `ics_id`, `item_id`, `quantity`, `article`, `remarks`, `inventory_item_no`, `created_at`) VALUES
-(56, 59, 176, 1, 'SEMI- EXPENDABLE IT EQUIPMENT', 'Good condition', 'ICS-2025-001', '2025-05-02 14:35:45'),
-(57, 59, 182, 1, 'SEMI- EXPENDABLE SCIENCE AND MATH EQUIPMENT', 'Good condition', 'ICS-2025-002', '2025-05-02 14:35:45'),
-(58, 60, 195, 1, 'SEMI-EXPENDABLE FURNITURE AND FIXTURES', 'Good condition', 'ICS-2025-003', '2025-05-02 14:37:23'),
-(59, 60, 196, 2, 'SEMI-EXPENDABLE FURNITURE AND FIXTURES', 'Good condition', 'ICS-2025-004', '2025-05-02 14:37:23'),
-(60, 61, 197, 2, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Good condition', 'ICS-2025-005', '2025-05-02 14:39:09'),
-(61, 61, 198, 10, 'SEMI- EXPENDABLE SCIENCE AND MATH EQUIPMENT', 'Good condition', 'ICS-2025-006', '2025-05-02 14:39:09'),
-(62, 62, 183, 2, 'SEMI- EXPENDABLE IT EQUIPMENT', 'Good condition', 'ICS-2025-007', '2025-05-02 14:40:36'),
-(63, 62, 199, 5, 'SEMI- EXPENDABLE IT EQUIPMENT', 'Good condition', 'ICS-2025-008', '2025-05-02 14:40:36'),
-(64, 63, 184, 2, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Good conditionsss', 'ICS-2025-009', '2025-05-02 14:43:02'),
-(65, 63, 200, 4, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Good condition', 'ICS-2025-010', '2025-05-02 14:43:02'),
-(66, 64, 213, 2, 'SEMI-EXPENDABLE FURNITURE AND FIXTURES', 'Non-consumable', 'ICS-2025-0020', '2025-05-06 11:52:50'),
-(67, 65, 214, 2, 'SEMI- EXPENDABLE SCIENCE AND MATH EQUIPMENT', 'Good condition', 'ICS-2025-0021', '2025-05-16 02:10:18'),
-(68, 66, 215, 2, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'sadadsad', 'ICS-2025-00322', '2025-05-16 02:31:32'),
-(69, 67, 216, 2, 'SEMI- EXPENDABLE IT EQUIPMENT', 'Good condition', 'ICS-2025-00923', '2025-05-16 03:26:24'),
-(70, 68, 219, 2, 'SEMI- EXPENDABLE IT EQUIPMENT', 'Good condition', 'ICS-2025-0029', '2025-05-16 07:41:00');
+INSERT INTO `ics_items` (`ics_item_id`, `ics_id`, `item_id`, `quantity`, `article`, `remarks`, `estimated_useful_life`, `inventory_item_no`, `created_at`) VALUES
+(56, 59, 176, 1, 'SEMI- EXPENDABLE IT EQUIPMENT', 'Good condition', 10, 'ICS-2025-001', '2025-05-02 14:35:45'),
+(57, 59, 182, 1, 'SEMI- EXPENDABLE SCIENCE AND MATH EQUIPMENT', 'Good condition', 10, 'ICS-2025-002', '2025-05-02 14:35:45'),
+(58, 60, 195, 1, 'SEMI-EXPENDABLE FURNITURE AND FIXTURES', 'Good condition', 10, 'ICS-2025-003', '2025-05-02 14:37:23'),
+(59, 60, 196, 2, 'SEMI-EXPENDABLE FURNITURE AND FIXTURES', 'Good condition', 10, 'ICS-2025-004', '2025-05-02 14:37:23'),
+(60, 61, 197, 2, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Good condition', 10, 'ICS-2025-005', '2025-05-02 14:39:09'),
+(61, 61, 198, 10, 'SEMI- EXPENDABLE SCIENCE AND MATH EQUIPMENT', 'Good condition', 10, 'ICS-2025-006', '2025-05-02 14:39:09'),
+(62, 62, 183, 2, 'SEMI- EXPENDABLE IT EQUIPMENT', 'Good condition', 10, 'ICS-2025-007', '2025-05-02 14:40:36'),
+(63, 62, 199, 5, 'SEMI- EXPENDABLE IT EQUIPMENT', 'Good condition', 10, 'ICS-2025-008', '2025-05-02 14:40:36'),
+(64, 63, 184, 2, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Good condition', 10, 'ICS-2025-009', '2025-05-02 14:43:02'),
+(66, 64, 213, 2, 'SEMI-EXPENDABLE FURNITURE AND FIXTURES', 'Non-consumable', 6, 'ICS-2025-0020', '2025-05-06 11:52:50'),
+(67, 65, 214, 2, 'SEMI- EXPENDABLE SCIENCE AND MATH EQUIPMENT', 'Good condition', 8, 'ICS-2025-0021', '2025-05-16 02:10:18'),
+(68, 66, 215, 2, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'sadadsad', 7, 'ICS-2025-00322', '2025-05-16 02:31:32'),
+(69, 67, 216, 2, 'SEMI- EXPENDABLE IT EQUIPMENT', 'Good condition', 9, 'ICS-2025-00923', '2025-05-16 03:26:24'),
+(70, 68, 219, 2, 'SEMI- EXPENDABLE IT EQUIPMENT', 'Good condition', 10, 'ICS-2025-0029', '2025-05-16 07:41:00'),
+(71, 69, 222, 2, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Good condition', 5, 'ICS-2025-007	999', '2025-05-16 16:27:17');
 
 -- --------------------------------------------------------
 
@@ -242,7 +243,8 @@ INSERT INTO `inventory_custodian_slips` (`ics_id`, `entity_id`, `ics_no`, `end_u
 (65, 34, 'ICS-2025-0021', 'Steven sshu', 'Teacher II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-16 02:10:17', '2025-05-16 05:08:40'),
 (66, 35, 'ICS-2025-0022', 'Toff Vergara', 'Teacher II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-16 02:31:32', '2025-05-16 03:16:50'),
 (67, 34, 'ICS-2025-0023', 'Camille Navarro', 'TLE Instructor', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-16 03:26:24', '2025-05-16 03:26:24'),
-(68, 34, 'ICS-2025-0029', 'Rinz Tagalogod', 'Teacher II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-16 07:41:00', '2025-05-16 07:41:00');
+(68, 34, 'ICS-2025-0029', 'Rinz Tagalogod', 'Teacher II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-16 07:41:00', '2025-05-16 07:41:00'),
+(69, 32, 'ICS-2025-00222', 'Anthony Black', 'Teacher II', '2025-05-17', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-17', '2025-05-16 16:27:17', '2025-05-16 16:27:17');
 
 -- --------------------------------------------------------
 
@@ -256,7 +258,6 @@ CREATE TABLE `items` (
   `item_description` text NOT NULL,
   `unit` varchar(20) NOT NULL,
   `unit_cost` decimal(10,2) NOT NULL,
-  `estimated_useful_life` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -265,53 +266,54 @@ CREATE TABLE `items` (
 -- Dumping data for table `items`
 --
 
-INSERT INTO `items` (`item_id`, `stock_no`, `item_description`, `unit`, `unit_cost`, `estimated_useful_life`, `created_at`, `updated_at`) VALUES
-(176, NULL, 'Laptop (Intel i5, 8GB RAM)', 'pieces', 32000.00, 4, '2025-05-02 14:05:34', NULL),
-(177, NULL, 'Electric Fan (Stand Type)', 'pieces', 6500.00, NULL, '2025-05-02 14:05:34', NULL),
-(178, NULL, 'Filing Cabinet (4-layer)', 'pieces', 5200.00, NULL, '2025-05-02 14:12:09', NULL),
-(179, NULL, 'Printer (LaserJet)', 'pieces', 12000.00, NULL, '2025-05-02 14:12:09', NULL),
-(180, NULL, 'Extension Wire (10m)', 'pieces', 6650.00, NULL, '2025-05-02 14:13:48', NULL),
-(181, NULL, 'Monoblock Chairs (White)', 'pieces', 7000.00, NULL, '2025-05-02 14:13:48', NULL),
-(182, NULL, 'LED Projector', 'pieces', 18000.00, 4, '2025-05-02 14:16:00', '2025-05-16 08:10:26'),
-(183, NULL, 'Wi-Fi Router', 'pieces', 7800.00, 10, '2025-05-02 14:16:00', NULL),
-(184, NULL, 'Digital Multimeter', 'pieces', 69000.00, 2, '2025-05-02 14:17:35', '2025-05-16 08:24:02'),
-(185, NULL, 'Rechargeable Flashlight', 'pieces', 50000.00, NULL, '2025-05-02 14:17:36', '2025-05-06 11:59:22'),
-(186, 'STK-001', 'Bond Paper (A4)', '', 0.00, NULL, '2025-05-02 14:22:06', NULL),
-(187, 'STK-002', 'Whiteboard Markers', 'box', 0.00, NULL, '2025-05-02 14:22:06', '2025-05-16 08:12:46'),
-(188, 'STK-003', 'Long Folders (Kraft)', 'pieces', 0.00, NULL, '2025-05-02 14:24:31', NULL),
-(189, 'STK-004', 'Stapler w/ Pins', 'pieces', 0.00, NULL, '2025-05-02 14:24:31', NULL),
-(190, 'STK-005', 'Correction Tape', 'pieces', 0.00, NULL, '2025-05-02 14:27:13', NULL),
-(191, 'STK-006', 'Manila Paper', 'pieces', 0.00, NULL, '2025-05-02 14:27:13', NULL),
-(192, 'STK-007', 'Electrical Tape', 'pieces', 0.00, NULL, '2025-05-02 14:30:28', NULL),
-(193, 'STK-009', 'USB Flash Drive (32GB)', 'pieces', 0.00, NULL, '2025-05-02 14:32:51', '2025-05-16 08:18:05'),
-(194, 'STK-010', 'Mouse (Optical)', 'pieces', 0.00, NULL, '2025-05-02 14:32:51', '2025-05-16 08:18:05'),
-(195, NULL, 'Filing Cabinet (4-drawer)', 'pieces', 5200.00, 10, '2025-05-02 14:37:23', NULL),
-(196, NULL, 'Stapler (Heavy Duty)', 'pieces', 650.00, 3, '2025-05-02 14:37:23', NULL),
-(197, NULL, 'Monoblock Chair (White)', 'pieces', 350.00, 3, '2025-05-02 14:39:09', NULL),
-(198, NULL, 'Monoblock Chair (White)', 'pieces', 600.00, 5, '2025-05-02 14:39:09', NULL),
-(199, NULL, 'Optical Mouse', 'pieces', 400.00, 4, '2025-05-02 14:40:36', NULL),
-(200, NULL, 'Flashlight (Rechargeable)', 'pieces', 950.00, 3, '2025-05-02 14:43:02', NULL),
-(201, 'STK-1001', 'Laptop (Intel i5, 8GB RAM)', 'pieces', 32000.00, 5, '2025-05-02 14:48:32', '2025-05-16 08:08:56'),
-(202, 'STK-1002', 'LED Projector', 'pieces', 18000.00, 5, '2025-05-02 14:48:32', NULL),
-(203, 'STK-1003', 'Filing Cabinet (4-drawer)', 'pieces', 5200.00, 5, '2025-05-02 14:51:21', NULL),
-(204, 'STK-1004', 'Heavy-Duty Stapler', 'pieces', 650.00, 5, '2025-05-02 14:51:21', NULL),
-(205, 'STK-1005', 'Monoblock Chair (White)', 'pieces', 650.00, 5, '2025-05-02 14:53:43', NULL),
-(206, 'STK-1006', 'Extension Cord (10 meters)', 'pieces', 600.00, 5, '2025-05-02 14:53:43', NULL),
-(207, 'STK-1007', 'Wi-Fi Router', 'pieces', 2800.00, 5, '2025-05-02 14:56:24', NULL),
-(208, 'STK-1008', 'Optical Mouse', 'pieces', 400.00, 5, '2025-05-02 14:56:24', NULL),
-(209, 'STK-1009', 'Digital Multimeter', 'pieces', 1300.00, 5, '2025-05-02 14:58:27', NULL),
-(210, 'STK-1010', 'Rechargeable Flashlight', 'pieces', 950.00, 5, '2025-05-02 14:58:27', NULL),
-(211, 'STK-1011', 'Office Table', 'pieces', 2000.00, 5, '2025-05-03 16:00:51', '2025-05-06 12:17:14'),
-(212, 'STK-10013', 'Acer Laptop, i5 12th Gen 8gb', 'box', 50000.00, 5, '2025-05-06 10:40:04', '2025-05-16 08:24:02'),
-(213, NULL, 'blue ballpen', 'box', 76.00, 10, '2025-05-06 11:52:50', '2025-05-16 03:22:50'),
-(214, NULL, 'Laptop (Intel i5, 8GB RAM)', 'pieces', 21000.00, 10, '2025-05-16 02:10:18', '2025-05-16 03:21:26'),
-(215, NULL, 'Acer Laptop, i5 12th Gen 8gb', 'pieces', 22000.00, 22, '2025-05-16 02:31:32', '2025-05-16 03:17:43'),
-(216, NULL, 'Acer Laptop, i5 12th Gen 8gb', 'pieces', 23300.00, 10, '2025-05-16 03:26:24', NULL),
-(217, 'STK-10023223', 'Acer Laptop, i5 12th Gen 8gb', 'box', 2133.00, 5, '2025-05-16 03:41:04', NULL),
-(218, 'STK-030', 'Laptop (Intel i5, 8GB RAM)', 'pieces', 23000.00, 5, '2025-05-16 07:18:43', '2025-05-16 08:15:40'),
-(219, NULL, 'Acer Laptop, i5 12th Gen 8gb', 'pieces', 22222.00, 10, '2025-05-16 07:41:00', '2025-05-16 08:09:14'),
-(220, 'STK-0029', 'Acer Laptop, i5 12th Gen 8gb', 'pieces', 0.00, NULL, '2025-05-16 07:50:37', '2025-05-16 08:16:32'),
-(221, 'STK-0030', 'Laptop (Intel i5, 8GB RAM)', 'pieces', 0.00, NULL, '2025-05-16 07:50:37', '2025-05-16 08:16:32');
+INSERT INTO `items` (`item_id`, `stock_no`, `item_description`, `unit`, `unit_cost`, `created_at`, `updated_at`) VALUES
+(176, NULL, 'Laptop (Intel i5, 8GB RAM)', 'pieces', 32000.00, '2025-05-02 14:05:34', NULL),
+(177, NULL, 'Electric Fan (Stand Type)', 'pieces', 6500.00, '2025-05-02 14:05:34', NULL),
+(178, NULL, 'Filing Cabinet (4-layer)', 'pieces', 5200.00, '2025-05-02 14:12:09', NULL),
+(179, NULL, 'Printer (LaserJet)', 'pieces', 12000.00, '2025-05-02 14:12:09', NULL),
+(180, NULL, 'Extension Wire (10m)', 'pieces', 6650.00, '2025-05-02 14:13:48', NULL),
+(181, NULL, 'Monoblock Chairs (White)', 'pieces', 7000.00, '2025-05-02 14:13:48', NULL),
+(182, NULL, 'LED Projector', 'pieces', 18000.00, '2025-05-02 14:16:00', '2025-05-16 08:10:26'),
+(183, NULL, 'Wi-Fi Router', 'pieces', 7800.00, '2025-05-02 14:16:00', NULL),
+(184, NULL, 'Digital Multimeter', 'pieces', 69000.00, '2025-05-02 14:17:35', '2025-05-16 16:58:27'),
+(185, NULL, 'Rechargeable Flashlight', 'pieces', 50000.00, '2025-05-02 14:17:36', '2025-05-06 11:59:22'),
+(186, 'STK-001', 'Bond Paper (A4)', '', 0.00, '2025-05-02 14:22:06', NULL),
+(187, 'STK-002', 'Whiteboard Markers', 'box', 0.00, '2025-05-02 14:22:06', '2025-05-16 08:12:46'),
+(188, 'STK-003', 'Long Folders (Kraft)', 'pieces', 0.00, '2025-05-02 14:24:31', NULL),
+(189, 'STK-004', 'Stapler w/ Pins', 'pieces', 0.00, '2025-05-02 14:24:31', NULL),
+(190, 'STK-005', 'Correction Tape', 'pieces', 0.00, '2025-05-02 14:27:13', NULL),
+(191, 'STK-006', 'Manila Paper', 'pieces', 0.00, '2025-05-02 14:27:13', NULL),
+(192, 'STK-007', 'Electrical Tape', 'pieces', 0.00, '2025-05-02 14:30:28', NULL),
+(193, 'STK-009', 'USB Flash Drive (32GB)', 'pieces', 0.00, '2025-05-02 14:32:51', '2025-05-16 08:18:05'),
+(194, 'STK-010', 'Mouse (Optical)', 'pieces', 0.00, '2025-05-02 14:32:51', '2025-05-16 08:18:05'),
+(195, NULL, 'Filing Cabinet (4-drawer)', 'pieces', 5200.00, '2025-05-02 14:37:23', NULL),
+(196, NULL, 'Stapler (Heavy Duty)', 'pieces', 650.00, '2025-05-02 14:37:23', NULL),
+(197, NULL, 'Monoblock Chair (White)', 'pieces', 350.00, '2025-05-02 14:39:09', NULL),
+(198, NULL, 'Monoblock Chair (White)', 'pieces', 600.00, '2025-05-02 14:39:09', NULL),
+(199, NULL, 'Optical Mouse', 'pieces', 400.00, '2025-05-02 14:40:36', NULL),
+(200, NULL, 'Flashlight (Rechargeable)', 'pieces', 950.00, '2025-05-02 14:43:02', NULL),
+(201, 'STK-1001', 'Laptop (Intel i5, 8GB RAM)', 'pieces', 32000.00, '2025-05-02 14:48:32', '2025-05-16 08:08:56'),
+(202, 'STK-1002', 'LED Projector', 'pieces', 18000.00, '2025-05-02 14:48:32', NULL),
+(203, 'STK-1003', 'Filing Cabinet (4-drawer)', 'pieces', 5200.00, '2025-05-02 14:51:21', NULL),
+(204, 'STK-1004', 'Heavy-Duty Stapler', 'pieces', 650.00, '2025-05-02 14:51:21', NULL),
+(205, 'STK-1005', 'Monoblock Chair (White)', 'pieces', 650.00, '2025-05-02 14:53:43', NULL),
+(206, 'STK-1006', 'Extension Cord (10 meters)', 'pieces', 600.00, '2025-05-02 14:53:43', NULL),
+(207, 'STK-1007', 'Wi-Fi Router', 'pieces', 2800.00, '2025-05-02 14:56:24', NULL),
+(208, 'STK-1008', 'Optical Mouse', 'pieces', 400.00, '2025-05-02 14:56:24', NULL),
+(209, 'STK-1009', 'Digital Multimeter', 'pieces', 1300.00, '2025-05-02 14:58:27', '2025-05-16 16:57:37'),
+(210, 'STK-1010', 'Rechargeable Flashlight', 'pieces', 950.00, '2025-05-02 14:58:27', NULL),
+(211, 'STK-1011', 'Office Table', 'pieces', 2000.00, '2025-05-03 16:00:51', '2025-05-06 12:17:14'),
+(212, 'STK-10013', 'Acer Laptop, i5 12th Gen 8gb', 'box', 50000.00, '2025-05-06 10:40:04', '2025-05-16 17:13:06'),
+(213, NULL, 'blue ballpen', 'box', 76.00, '2025-05-06 11:52:50', '2025-05-16 03:22:50'),
+(214, NULL, 'Laptop (Intel i5, 8GB RAM)', 'pieces', 21000.00, '2025-05-16 02:10:18', '2025-05-16 03:21:26'),
+(215, NULL, 'Acer Laptop, i5 12th Gen 8gb', 'pieces', 22000.00, '2025-05-16 02:31:32', '2025-05-16 03:17:43'),
+(216, NULL, 'Acer Laptop, i5 12th Gen 8gb', 'pieces', 23300.00, '2025-05-16 03:26:24', NULL),
+(217, 'STK-10023223', 'Acer Laptop, i5 12th Gen 8gb', 'box', 2133.00, '2025-05-16 03:41:04', NULL),
+(218, 'STK-030', 'Laptop (Intel i5, 8GB RAM)', 'pieces', 23000.00, '2025-05-16 07:18:43', '2025-05-16 08:15:40'),
+(219, NULL, 'Acer Laptop, i5 12th Gen 8gb', 'pieces', 22222.00, '2025-05-16 07:41:00', '2025-05-16 08:09:14'),
+(220, 'STK-0029', 'Acer Laptop, i5 12th Gen 8gb', 'pieces', 0.00, '2025-05-16 07:50:37', '2025-05-16 08:16:32'),
+(221, 'STK-0030', 'Laptop (Intel i5, 8GB RAM)', 'pieces', 0.00, '2025-05-16 07:50:37', '2025-05-16 08:16:32'),
+(222, NULL, 'Acer Laptop, i5 12th Gen 8gb', 'pieces', 2222.00, '2025-05-16 16:27:17', NULL);
 
 -- --------------------------------------------------------
 
@@ -613,7 +615,7 @@ ALTER TABLE `iar_items`
 -- AUTO_INCREMENT for table `ics_items`
 --
 ALTER TABLE `ics_items`
-  MODIFY `ics_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `ics_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `inspection_acceptance_reports`
@@ -625,13 +627,13 @@ ALTER TABLE `inspection_acceptance_reports`
 -- AUTO_INCREMENT for table `inventory_custodian_slips`
 --
 ALTER TABLE `inventory_custodian_slips`
-  MODIFY `ics_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `ics_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=222;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=223;
 
 --
 -- AUTO_INCREMENT for table `par_items`

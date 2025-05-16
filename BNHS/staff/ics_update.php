@@ -42,23 +42,23 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $article = sanitize($itemData['article']);
         $remarks = isset($itemData['remarks']) ? sanitize($itemData['remarks']) : '';
 
-        // Update items table
+        // Update items table - removed estimated_useful_life
         $stmt = $mysqli->prepare("UPDATE items SET 
-          item_description = ?, unit = ?, unit_cost = ?, estimated_useful_life = ?
+          item_description = ?, unit = ?, unit_cost = ?
           WHERE item_id = ?");
 
-        $stmt->bind_param("ssdsi", $item_description, $unit, $unit_cost, $estimated_useful_life, $item_id);
+        $stmt->bind_param("ssdi", $item_description, $unit, $unit_cost, $item_id);
 
         if (!$stmt->execute()) {
           throw new Exception("Error updating item: " . $stmt->error);
         }
 
-        // Update ics_items
+        // Update ics_items - added estimated_useful_life
         $stmt = $mysqli->prepare("UPDATE ics_items SET 
-          quantity = ?, inventory_item_no = ?, article = ?, remarks = ?
+          quantity = ?, inventory_item_no = ?, article = ?, remarks = ?, estimated_useful_life = ?
           WHERE ics_item_id = ?");
 
-        $stmt->bind_param("isssi", $quantity, $inventory_item_no, $article, $remarks, $ics_item_id);
+        $stmt->bind_param("isssii", $quantity, $inventory_item_no, $article, $remarks, $estimated_useful_life, $ics_item_id);
 
         if (!$stmt->execute()) {
           throw new Exception("Error updating ICS items: " . $stmt->error);
@@ -96,23 +96,23 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
       $mysqli->begin_transaction();
 
       try {
-        // Update items table
+        // Update items table - removed estimated_useful_life
         $stmt = $mysqli->prepare("UPDATE items SET 
-          item_description = ?, unit = ?, unit_cost = ?, estimated_useful_life = ?
+          item_description = ?, unit = ?, unit_cost = ?
           WHERE item_id = ?");
 
-        $stmt->bind_param("ssdsi", $item_description, $unit, $unit_cost, $estimated_useful_life, $item_id);
+        $stmt->bind_param("ssdi", $item_description, $unit, $unit_cost, $item_id);
 
         if (!$stmt->execute()) {
           throw new Exception("Error updating item: " . $stmt->error);
         }
 
-        // Update ics_items
+        // Update ics_items - added estimated_useful_life
         $stmt = $mysqli->prepare("UPDATE ics_items SET 
-          quantity = ?, inventory_item_no = ?, article = ?, remarks = ?
+          quantity = ?, inventory_item_no = ?, article = ?, remarks = ?, estimated_useful_life = ?
           WHERE ics_id = ? AND item_id = ?");
 
-        $stmt->bind_param("isssii", $quantity, $inventory_item_no, $article, $remarks, $ics_id, $item_id);
+        $stmt->bind_param("isssiii", $quantity, $inventory_item_no, $article, $remarks, $estimated_useful_life, $ics_id, $item_id);
 
         if (!$stmt->execute()) {
           throw new Exception("Error updating ICS items: " . $stmt->error);
@@ -198,23 +198,23 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         while ($row = $result->fetch_object()) {
           $item_id = $row->item_id;
 
-          // Update items table
+          // Update items table - removed estimated_useful_life
           $stmt = $mysqli->prepare("UPDATE items SET 
-            item_description = ?, unit = ?, unit_cost = ?, estimated_useful_life = ?
+            item_description = ?, unit = ?, unit_cost = ?
             WHERE item_id = ?");
 
-          $stmt->bind_param("ssdsi", $item_description, $unit, $unit_cost, $estimated_useful_life, $item_id);
+          $stmt->bind_param("ssdi", $item_description, $unit, $unit_cost, $item_id);
 
           if (!$stmt->execute()) {
             throw new Exception("Error updating item: " . $stmt->error);
           }
 
-          // Update ics_items
+          // Update ics_items - added estimated_useful_life
           $stmt = $mysqli->prepare("UPDATE ics_items SET 
-            quantity = ?, inventory_item_no = ?, article = ?, remarks = ?
+            quantity = ?, inventory_item_no = ?, article = ?, remarks = ?, estimated_useful_life = ?
             WHERE ics_id = ? AND item_id = ?");
 
-          $stmt->bind_param("isssii", $quantity, $inventory_item_no, $article, $remarks, $ics_id, $item_id);
+          $stmt->bind_param("isssssii", $quantity, $inventory_item_no, $article, $remarks, $estimated_useful_life, $ics_id, $item_id);
 
           if (!$stmt->execute()) {
             throw new Exception("Error updating ICS items: " . $stmt->error);
@@ -260,11 +260,11 @@ require_once('partials/_head.php');
         i.item_description,
         i.unit,
         i.unit_cost,
-        i.estimated_useful_life,
         ii.quantity,
         ii.inventory_item_no,
         ii.article,
-        ii.remarks
+        ii.remarks,
+        ii.estimated_useful_life
       FROM inventory_custodian_slips ics
       JOIN entities e ON ics.entity_id = e.entity_id
       JOIN ics_items ii ON ics.ics_id = ii.ics_id
@@ -296,11 +296,11 @@ require_once('partials/_head.php');
         i.item_description,
         i.unit,
         i.unit_cost,
-        i.estimated_useful_life,
         ii.quantity,
         ii.inventory_item_no,
         ii.article,
         ii.remarks,
+        ii.estimated_useful_life,
         ii.ics_item_id,
         i.item_id
       FROM inventory_custodian_slips ics

@@ -135,7 +135,7 @@ ob_start(); // Start output buffering
             // Modified query to get all items with the same ICS number
             $ret = "SELECT ics.ics_id, e.entity_name, e.fund_cluster, ics.ics_no,
                     ii.quantity, i.unit, i.unit_cost, (ii.quantity * i.unit_cost) as total_amount,
-                    i.item_description, ii.inventory_item_no, i.estimated_useful_life,
+                    i.item_description, ii.inventory_item_no, ii.estimated_useful_life,
                     ics.end_user_name, ics.end_user_position, ics.end_user_date,
                     ics.custodian_name, ics.custodian_position, ics.custodian_date,
                     ii.article, ii.remarks

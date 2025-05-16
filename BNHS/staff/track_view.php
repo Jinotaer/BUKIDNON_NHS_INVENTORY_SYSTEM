@@ -52,7 +52,7 @@ if ($source_table === 'inventory_custodian_slips') {
     if ($item_id > 0 && !empty($item_id_column)) {
         $query = "SELECT ics.ics_id as id, e.entity_name, e.fund_cluster, ics.ics_no,
                   ii.quantity, i.unit, i.unit_cost, (ii.quantity * i.unit_cost) as total_amount,
-                  i.item_description, ii.inventory_item_no, i.estimated_useful_life,
+                  i.item_description, ii.inventory_item_no, ii.estimated_useful_life,
                   ics.end_user_name, ics.end_user_position, ics.end_user_date,
                   ics.custodian_name, ics.custodian_position, ics.custodian_date,
                   ics.created_at, ii.article, ii.remarks, ii.ics_item_id
@@ -64,7 +64,7 @@ if ($source_table === 'inventory_custodian_slips') {
     } else {
         $query = "SELECT ics.ics_id as id, e.entity_name, e.fund_cluster, ics.ics_no,
                   ii.quantity, i.unit, i.unit_cost, (ii.quantity * i.unit_cost) as total_amount,
-                  i.item_description, ii.inventory_item_no, i.estimated_useful_life,
+                  i.item_description, ii.inventory_item_no, ii.estimated_useful_life,
                   ics.end_user_name, ics.end_user_position, ics.end_user_date,
                   ics.custodian_name, ics.custodian_position, ics.custodian_date,
                   ics.created_at, ii.article, ii.remarks, ii.ics_item_id

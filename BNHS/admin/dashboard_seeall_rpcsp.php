@@ -54,7 +54,7 @@ require_once('partials/_head.php');
                   $ret = "SELECT ics.ics_id as id, ics.ics_no, ics.end_user_name, ics.end_user_position, 
                   ics.end_user_date as date_received_user, ics.custodian_name, ics.custodian_position, 
                   ics.custodian_date as date_received_custodian, ics.created_at,
-                  i.item_description, i.unit_cost, i.unit, i.estimated_useful_life as estimated_life,
+                  i.item_description, i.unit_cost, i.unit, ii.estimated_useful_life as estimated_life,
                   e.entity_name, e.fund_cluster as entity_fund_cluster,
                   ii.quantity, ii.inventory_item_no, ii.remarks, ii.article,
                   (ii.quantity * i.unit_cost) as total_amount

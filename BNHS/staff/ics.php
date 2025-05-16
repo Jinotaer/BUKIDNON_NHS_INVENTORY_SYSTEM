@@ -121,22 +121,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
       if ($result_item->num_rows > 0) {
         $item_id = $result_item->fetch_object()->item_id;
       } else {
-        $stmt_item = $mysqli->prepare("INSERT INTO items (item_description, unit, unit_cost, estimated_useful_life) VALUES (?, ?, ?, ?)");
-        $stmt_item->bind_param("ssdi", $item_description, $unit, $unit_cost, $estimated_life);
+        $stmt_item = $mysqli->prepare("INSERT INTO items (item_description, unit, unit_cost) VALUES (?, ?, ?)");
+        $stmt_item->bind_param("ssd", $item_description, $unit, $unit_cost);
         $stmt_item->execute();
         $item_id = $mysqli->insert_id;
       }
 
       // Insert into ics_items table
       $stmt_ics_items = $mysqli->prepare("INSERT INTO ics_items (
-        ics_id, item_id, quantity, inventory_item_no, article, remarks
-      ) VALUES (?, ?, ?, ?, ?, ?)");
+        ics_id, item_id, quantity, inventory_item_no, article, remarks, estimated_useful_life
+      ) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
       if ($stmt_ics_items === false) {
         die("MySQL prepare failed: " . $mysqli->error);
       }
 
-      $stmt_ics_items->bind_param("iiisss", $ics_id, $item_id, $quantity, $inventory_item_no, $article, $remarks);
+      $stmt_ics_items->bind_param("iiissss", $ics_id, $item_id, $quantity, $inventory_item_no, $article, $remarks, $estimated_life);
 
       if (!$stmt_ics_items->execute()) {
         $err = "Error creating item details: " . $stmt_ics_items->error;

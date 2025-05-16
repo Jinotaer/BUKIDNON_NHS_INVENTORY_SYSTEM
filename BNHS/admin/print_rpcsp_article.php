@@ -278,7 +278,7 @@ ob_start();
             <?php
             // Query to get items filtered by article
             $ret = "SELECT ics.ics_id as id, ics.ics_no,
-                    i.item_description, i.unit_cost, i.unit, i.estimated_useful_life as estimated_life,
+                    i.item_description, i.unit_cost, i.unit, ii.estimated_useful_life as estimated_life,
                     ii.quantity, ii.inventory_item_no, ii.remarks, ii.article,
                     (ii.quantity * i.unit_cost) as total_amount
                     FROM inventory_custodian_slips ics

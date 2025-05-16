@@ -87,8 +87,8 @@ if ($source_table == 'inspection_acceptance_reports') {
 } else if ($source_table == 'inventory_custodian_slips') {
     if ($item_id > 0 && !empty($item_id_column)) {
         $query = "SELECT t.*, e.entity_name, e.fund_cluster,
-                  i.item_id, i.quantity, i.inventory_item_no, i.ics_item_id, i.remarks,
-                  itm.item_description, itm.unit, itm.unit_cost, itm.estimated_useful_life
+                  i.item_id, i.quantity, i.inventory_item_no, i.ics_item_id, i.remarks, i.estimated_useful_life,
+                  itm.item_description, itm.unit, itm.unit_cost
                   FROM `$source_table` t 
                   JOIN entities e ON t.entity_id = e.entity_id 
                   JOIN ics_items i ON t.ics_id = i.ics_id
@@ -96,8 +96,8 @@ if ($source_table == 'inspection_acceptance_reports') {
                   WHERE i.ics_item_id = ?";
     } else {
         $query = "SELECT t.*, e.entity_name, e.fund_cluster,
-                  i.item_id, i.quantity, i.inventory_item_no, i.ics_item_id, i.remarks,
-                  itm.item_description, itm.unit, itm.unit_cost, itm.estimated_useful_life
+                  i.item_id, i.quantity, i.inventory_item_no, i.ics_item_id, i.remarks, i.estimated_useful_life,
+                  itm.item_description, itm.unit, itm.unit_cost
                   FROM `$source_table` t 
                   JOIN entities e ON t.entity_id = e.entity_id 
                   LEFT JOIN ics_items i ON t.ics_id = i.ics_id
