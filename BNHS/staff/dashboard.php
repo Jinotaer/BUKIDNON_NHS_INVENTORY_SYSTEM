@@ -292,8 +292,8 @@ if (isset($_GET['delete_item']) && !isset($_GET['type'])) {
                     <th class="text-primary" scope="col">Unit Value</th>
                     <th scope="col">Quantity</th>
                     <th class="text-primary" scope="col">Total Amount</th>
-                    <th scope="col">Date Acquired</th>
-                    <th class="text-primary" scope="col">Remarks</th>
+                    <!-- <th scope="col">Date Acquired</th> -->
+                    <th  scope="col">Remarks</th>
                     <!-- <th scope="col">Actions</th> -->
                   </tr>
                 </thead>
@@ -327,8 +327,8 @@ if (isset($_GET['delete_item']) && !isset($_GET['type'])) {
                         <td class="text-primary"><?php echo isset($par->unit_cost) ? $par->unit_cost : ''; ?></td>
                         <td><?php echo isset($par->quantity) ? $par->quantity : ''; ?></td>
                         <td class="text-primary"><?php echo isset($par->total_amount) ? $par->total_amount : ''; ?></td>
-                        <td><?php echo isset($par->date_acquired) ? $par->date_acquired : ''; ?></td>
-                        <td class="text-primary"><?php echo isset($par->remarks) ? $par->remarks : ''; ?></td>
+                        <!-- <td><?php echo isset($par->date_acquired) ? $par->date_acquired : ''; ?></td> -->
+                        <td><?php echo isset($par->remarks) ? $par->remarks : ''; ?></td>
                         <!-- <td>
                           <a href="dashboard.php?delete=<?php echo $par->par_id; ?>&type=par"
                             onclick="return confirm('Are you sure you want to delete this record?')">

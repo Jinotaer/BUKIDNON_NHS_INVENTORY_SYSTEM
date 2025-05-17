@@ -129,14 +129,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
       // Insert into ics_items table
       $stmt_ics_items = $mysqli->prepare("INSERT INTO ics_items (
-        ics_id, item_id, quantity, inventory_item_no, article, remarks, estimated_useful_life
-      ) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        ics_id, item_id, quantity, inventory_item_no, article, remarks
+      ) VALUES (?, ?, ?, ?, ?, ?)");
 
       if ($stmt_ics_items === false) {
         die("MySQL prepare failed: " . $mysqli->error);
       }
 
-      $stmt_ics_items->bind_param("iiissss", $ics_id, $item_id, $quantity, $inventory_item_no, $article, $remarks, $estimated_life);
+      $stmt_ics_items->bind_param("iiisss", $ics_id, $item_id, $quantity, $inventory_item_no, $article, $remarks);
 
       if (!$stmt_ics_items->execute()) {
         $err = "Error creating item details: " . $stmt_ics_items->error;
@@ -417,7 +417,6 @@ require_once('partials/_head.php');
                                 <option value="pieces" <?php if (isset($units[$i]) && $units[$i] == 'pieces') echo 'selected'; ?>>pieces</option>
                                 <option value="pack" <?php if (isset($units[$i]) && $units[$i] == 'pack') echo 'selected'; ?>>pack</option>
                                 <option value="set" <?php if (isset($units[$i]) && $units[$i] == 'set') echo 'selected'; ?>>set</option>
-                                <option value="unit" <?php if (isset($units[$i]) && $units[$i] == 'unit') echo 'selected'; ?>>unit</option>
                               </select>
                             </td>
                             <td><input type="number" name="quantity[]" class="underline-input" min="1" value="<?php echo isset($quantities[$i]) ? htmlspecialchars($quantities[$i]) : ''; ?>" required></td>
@@ -517,7 +516,9 @@ require_once('partials/_head.php');
           <select name="unit[]" class="underline-input" required>
             <option value="">Select Unit</option>
             <option value="box">box</option>
+             <option value="pack">pack</option>
             <option value="pieces">pieces</option>
+             <option value="set">set</option>
           </select>
         </td>
         <td><input type="number" name="quantity[]" class="underline-input" min="1" required></td>

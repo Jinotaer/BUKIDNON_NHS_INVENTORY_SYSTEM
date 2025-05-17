@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2025 at 07:49 PM
+-- Generation Time: May 17, 2025 at 06:56 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -115,7 +115,6 @@ CREATE TABLE `iar_items` (
 --
 
 INSERT INTO `iar_items` (`iar_item_id`, `iar_id`, `item_id`, `quantity`, `unit_price`, `total_price`, `remarks`, `created_at`) VALUES
-(72, 66, 201, 1, 32000.00, 32000.00, 'Consumable', '2025-05-02 14:48:32'),
 (73, 66, 202, 1, 18000.00, 18000.00, 'Damaged', '2025-05-02 14:48:32'),
 (74, 67, 203, 1, 5200.00, 5200.00, 'Non-Consumable', '2025-05-02 14:51:21'),
 (75, 67, 204, 1, 650.00, 650.00, 'Consumable', '2025-05-02 14:51:21'),
@@ -125,8 +124,17 @@ INSERT INTO `iar_items` (`iar_item_id`, `iar_id`, `item_id`, `quantity`, `unit_p
 (79, 69, 208, 22, 400.00, 8800.00, 'Non-Consumable', '2025-05-02 14:56:24'),
 (80, 70, 209, 3, 1300.00, 3900.00, 'Non-consumables', '2025-05-02 14:58:27'),
 (81, 70, 210, 4, 950.00, 3800.00, 'Consumable', '2025-05-02 14:58:27'),
-(84, 73, 217, 52321, 2133.00, 99999999.99, 'Non-Consumable', '2025-05-16 03:41:04'),
-(85, 74, 218, 2, 23000.00, 46000.00, '', '2025-05-16 07:18:43');
+(84, 73, 217, 1, 2133.00, 2133.00, 'Non-Consumable', '2025-05-16 03:41:04'),
+(85, 74, 218, 2, 23000.00, 46000.00, 'Consumable', '2025-05-16 07:18:43'),
+(86, 78, 223, 1, 109990.00, 109990.00, 'Non-Consumable', '2025-05-17 15:06:36'),
+(87, 78, 224, 1, 59995.00, 59995.00, 'Non-Consumable', '2025-05-17 15:06:36'),
+(88, 79, 225, 1, 500.00, 500.00, 'Non-Consumable', '2025-05-17 15:12:10'),
+(89, 79, 226, 1, 950.00, 950.00, 'Non-Consumable', '2025-05-17 15:12:10'),
+(90, 81, 227, 1, 280.00, 280.00, 'Consumable', '2025-05-17 15:17:12'),
+(91, 81, 228, 1, 250.00, 250.00, 'Consumable', '2025-05-17 15:17:12'),
+(92, 82, 229, 1, 109990.00, 109990.00, 'Non-Consumable', '2025-05-17 15:19:48'),
+(93, 83, 230, 1, 250.00, 250.00, 'Consumable', '2025-05-17 15:22:39'),
+(94, 83, 231, 1, 950.00, 950.00, 'Non-Consumable', '2025-05-17 15:22:39');
 
 -- --------------------------------------------------------
 
@@ -159,13 +167,16 @@ INSERT INTO `ics_items` (`ics_item_id`, `ics_id`, `item_id`, `quantity`, `articl
 (61, 61, 198, 10, 'SEMI- EXPENDABLE SCIENCE AND MATH EQUIPMENT', 'Good condition', 10, 'ICS-2025-006', '2025-05-02 14:39:09'),
 (62, 62, 183, 2, 'SEMI- EXPENDABLE IT EQUIPMENT', 'Good condition', 10, 'ICS-2025-007', '2025-05-02 14:40:36'),
 (63, 62, 199, 5, 'SEMI- EXPENDABLE IT EQUIPMENT', 'Good condition', 10, 'ICS-2025-008', '2025-05-02 14:40:36'),
-(64, 63, 184, 2, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Good condition', 10, 'ICS-2025-009', '2025-05-02 14:43:02'),
 (66, 64, 213, 2, 'SEMI-EXPENDABLE FURNITURE AND FIXTURES', 'Non-consumable', 6, 'ICS-2025-0020', '2025-05-06 11:52:50'),
 (67, 65, 214, 2, 'SEMI- EXPENDABLE SCIENCE AND MATH EQUIPMENT', 'Good condition', 8, 'ICS-2025-0021', '2025-05-16 02:10:18'),
 (68, 66, 215, 2, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'sadadsad', 7, 'ICS-2025-00322', '2025-05-16 02:31:32'),
 (69, 67, 216, 2, 'SEMI- EXPENDABLE IT EQUIPMENT', 'Good condition', 9, 'ICS-2025-00923', '2025-05-16 03:26:24'),
 (70, 68, 219, 2, 'SEMI- EXPENDABLE IT EQUIPMENT', 'Good condition', 10, 'ICS-2025-0029', '2025-05-16 07:41:00'),
-(71, 69, 222, 2, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Good condition', 5, 'ICS-2025-007	999', '2025-05-16 16:27:17');
+(71, 69, 222, 2, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Good condition', 5, 'ICS-2025-007	999', '2025-05-16 16:27:17'),
+(72, 70, 225, 1, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Non-consumable', 5, 'OFF-STAP-BLK2025-002', '2025-05-17 15:28:03'),
+(73, 70, 226, 1, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Non-consumable', 5, 'OFF-FLORG-WM3T-BOX02', '2025-05-17 15:28:03'),
+(74, 71, 226, 1, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Non-consumable', 5, 'OFF-FLORG-WM3T-BOX01', '2025-05-17 15:30:17'),
+(75, 72, 225, 1, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Non-consumable', 5, 'OFF-STAP-BLK2025-001', '2025-05-17 15:31:51');
 
 -- --------------------------------------------------------
 
@@ -201,13 +212,18 @@ CREATE TABLE `inspection_acceptance_reports` (
 --
 
 INSERT INTO `inspection_acceptance_reports` (`iar_id`, `entity_id`, `supplier_id`, `iar_no`, `po_no_date`, `req_office`, `responsibility_center`, `iar_date`, `invoice_no_date`, `receiver_name`, `teacher_id`, `position`, `date_inspected`, `inspectors`, `barangay_councilor`, `pta_observer`, `date_received`, `property_custodian`, `created_at`, `updated_at`) VALUES
-(66, 32, 15, 'IAR-2025-001', 'PO-2025-112', 'Accounting Office', '621', '2025-05-02', 'INV-4521', 'Engr. Maria Fe Navarro', 'T-2095', 'Supply Officer', '2025-05-02', 'Joan Savage', 'Hon. Emily Tan', 'Mr. Roberto Cruz', '2025-05-02', 'Stefany Jane Bernabe', '2025-05-02 14:48:32', '2025-05-02 14:48:32'),
-(67, 33, 16, 'IAR-2025-002', 'PO-25-002', 'HUMSS Department', '622', '2025-05-02', 'NV-4522', 'Angelie Cole', 'T-2092', 'Teacher II', '2025-05-02', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-02', 'Stefany Jane Bernabe', '2025-05-02 14:51:21', '2025-05-02 14:51:21'),
-(68, 34, 17, '23-04-003', 'PO-25-003', 'STEM Department', '623', '2025-05-02', 'AR-2025-003', 'Anthony Black', 'T-2094', 'Teacher II', '2025-05-02', 'Joan Savaege', 'Hon. Pedro M. Luna', 'Lapids lar', '2025-05-02', 'Stefany Jane Bernabe', '2025-05-02 14:53:43', '2025-05-02 14:53:43'),
-(69, 34, 18, 'IAR-2025-004', 'PO-25-004', 'High School Department', '624', '2025-05-02', 'INV-4525', 'Angelie Cole', 'TID-0522', 'Head Teacher III', '2025-05-02', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-02', 'Stefany Jane Bernabe', '2025-05-02 14:56:24', '2025-05-02 14:56:24'),
-(70, 33, 16, 'IAR-2025-005', 'PO-25-005', 'ABM Department', '625', '2025-05-02', 'INV-45223', 'Jerome Villanueva', 'TID-0522123', 'Teacher III', '2025-05-02', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-02', 'Stefany Jane Bernabe', '2025-05-02 14:58:27', '2025-05-02 14:58:27'),
-(73, 33, 19, 'IAR-2025-00102', 'PO-2025-123232', 'Office of the Principal', '7777', '2025-05-16', '27697191023', 'TOfff', 'TID-05222323', 'Teacher 2', '2025-05-16', 'Joan Savaege', 'Brain Nelson', 'Mr. Roberto Cruz', '2025-05-16', 'Stefany Jane Bernabe', '2025-05-16 03:41:04', '2025-05-16 07:16:55'),
-(74, 34, 18, 'IAR-2025-029', 'PO-25-0029', 'High School Department', '630', '2025-05-16', 'INV-45232', 'Rinz Tagalocod', 'TID-0522232', 'Teacher II', '2025-05-16', 'Joan Savage', 'Hon. Emily Tan', 'Lapids lar', '2025-05-16', 'Stefany Jane Bernabe', '2025-05-16 07:18:43', '2025-05-16 07:18:43');
+(66, 32, 15, 'IAR-2025-001', 'PO-25-001', 'Accounting Office', '621', '2025-05-02', 'INV-4521', 'Engr. Maria Fe Navarro', 'TID-05230', 'Supply Officer', '2025-05-02', 'Joan Savage', 'Hon. Emily Tan', 'Mr. Roberto Cruz', '2025-05-02', 'Stefany Jane Bernabe', '2025-05-02 14:48:32', '2025-05-17 15:45:02'),
+(67, 33, 16, 'IAR-2025-002', 'PO-25-002', 'HUMSS Department', '622', '2025-05-02', 'NV-4522', 'Angelie Cole', 'TID-05229', 'Teacher II', '2025-05-02', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-02', 'Stefany Jane Bernabe', '2025-05-02 14:51:21', '2025-05-17 15:44:56'),
+(68, 34, 17, '23-04-003', 'PO-25-003', 'STEM Department', '623', '2025-05-02', 'INV-4523', 'Anthony Black', 'TID-05228', 'Teacher II', '2025-05-02', 'Joan Savaege', 'Hon. Pedro M. Luna', 'Lapids lar', '2025-05-02', 'Stefany Jane Bernabe', '2025-05-02 14:53:43', '2025-05-17 15:44:51'),
+(69, 34, 18, 'IAR-2025-004', 'PO-25-004', 'High School Department', '624', '2025-05-02', 'INV-4524', 'Angelie Cole', 'TID-05227', 'Head Teacher III', '2025-05-02', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-02', 'Stefany Jane Bernabe', '2025-05-02 14:56:24', '2025-05-17 15:44:42'),
+(70, 33, 16, 'IAR-2025-005', 'PO-25-005', 'ABM Department', '625', '2025-05-02', 'INV-4525', 'Jerome Villanueva', 'TID-42123', 'Teacher III', '2025-05-02', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-02', 'Stefany Jane Bernabe', '2025-05-02 14:58:27', '2025-05-17 15:44:33'),
+(73, 33, 19, 'IAR-2025-00102', 'PO-25-006', 'Office of the Principal', '7777', '2025-05-16', 'INV-4526', 'TOfff', 'TID-05223', 'Teacher 2', '2025-05-16', 'Joan Savaege', 'Brain Nelson', 'Mr. Roberto Cruz', '2025-05-16', 'Stefany Jane Bernabe', '2025-05-16 03:41:04', '2025-05-17 15:44:26'),
+(74, 34, 18, 'IAR-2025-029', 'PO-25-007', 'High School Department', '630', '2025-05-16', 'INV-4527', 'Rinz Tagalocod', 'TID-12232', 'Teacher II', '2025-05-16', 'Joan Savage', 'Hon. Emily Tan', 'Lapids lar', '2025-05-16', 'Stefany Jane Bernabe', '2025-05-16 07:18:43', '2025-05-17 15:44:19'),
+(78, 32, 17, '25-05-005', 'PO-25-008', 'HUMSS Department', '215', '2025-05-10', 'INV-4528', 'Jake Batumbakal', 'TID-98736', 'Teacher II', '2025-05-10', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-10', 'Stefany Jane Bernabe Labadan', '2025-05-17 15:06:36', '2025-05-17 15:44:08'),
+(79, 32, 17, 'none', 'PO-25-009', 'GAS Department', '213', '2025-05-11', 'INV-4529', 'John Cena', 'TID-63728', 'Teacher II', '2025-05-11', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-11', 'Stefany Jane Bernabe', '2025-05-17 15:12:10', '2025-05-17 15:43:23'),
+(81, 32, 17, '25-05-004', 'PO-25-010', 'GAS Department', 'none', '2025-05-11', 'INV-4530', 'John Cena', 'TID-63728', 'Teacher II', '2025-05-11', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-11', 'Stefany Jane Bernabe', '2025-05-17 15:17:12', '2025-05-17 15:43:29'),
+(82, 32, 17, '25-05-003', 'PO-25-011', 'ABM Department', 'none', '2025-05-12', 'INV-4531', 'Jino Taer', 'TID-52672', 'Teacher II', '2025-05-12', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-12', 'Stefany Jane Bernabe', '2025-05-17 15:19:48', '2025-05-17 15:43:34'),
+(83, 34, 20, '25-05-002', 'PO-25-012', 'STEM Department', 'none', '2025-05-13', 'INV-4532', 'John Pruds Colot', 'TID-74545', 'Teacher II', '2025-05-13', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-13', 'Stefany Jane Bernabe', '2025-05-17 15:22:39', '2025-05-17 15:43:41');
 
 -- --------------------------------------------------------
 
@@ -244,7 +260,10 @@ INSERT INTO `inventory_custodian_slips` (`ics_id`, `entity_id`, `ics_no`, `end_u
 (66, 35, 'ICS-2025-0022', 'Toff Vergara', 'Teacher II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-16 02:31:32', '2025-05-16 03:16:50'),
 (67, 34, 'ICS-2025-0023', 'Camille Navarro', 'TLE Instructor', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-16 03:26:24', '2025-05-16 03:26:24'),
 (68, 34, 'ICS-2025-0029', 'Rinz Tagalogod', 'Teacher II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-16 07:41:00', '2025-05-16 07:41:00'),
-(69, 32, 'ICS-2025-00222', 'Anthony Black', 'Teacher II', '2025-05-17', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-17', '2025-05-16 16:27:17', '2025-05-16 16:27:17');
+(69, 32, 'ICS-2025-00222', 'Anthony Black', 'Teacher II', '2025-05-17', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-17', '2025-05-16 16:27:17', '2025-05-16 16:27:17'),
+(70, 32, 'ICS-25-05-003', 'John Cena', 'TEACHER II', '2025-05-10', 'Stefany Jane Bernabe Labadan', 'Administrative Office II', '2025-05-10', '2025-05-17 15:28:03', '2025-05-17 15:28:03'),
+(71, 34, 'ICS-25-05-002', 'John Pruds Colot', 'TEACHER II', '2025-05-11', 'STEFANY JANE B. LABADAN', 'Administrative Office II', '2025-05-11', '2025-05-17 15:30:17', '2025-05-17 15:30:17'),
+(72, 32, 'ICS-25-05-001', 'Steven Benedict Tado Bernabe', 'Teacher II', '2025-05-13', 'Stefany Jane Bernabe Labadan', 'Administrative Office II', '2025-05-13', '2025-05-17 15:31:51', '2025-05-17 15:31:51');
 
 -- --------------------------------------------------------
 
@@ -277,43 +296,52 @@ INSERT INTO `items` (`item_id`, `stock_no`, `item_description`, `unit`, `unit_co
 (183, NULL, 'Wi-Fi Router', 'pieces', 7800.00, '2025-05-02 14:16:00', NULL),
 (184, NULL, 'Digital Multimeter', 'pieces', 69000.00, '2025-05-02 14:17:35', '2025-05-16 16:58:27'),
 (185, NULL, 'Rechargeable Flashlight', 'pieces', 50000.00, '2025-05-02 14:17:36', '2025-05-06 11:59:22'),
-(186, 'STK-001', 'Bond Paper (A4)', '', 0.00, '2025-05-02 14:22:06', NULL),
-(187, 'STK-002', 'Whiteboard Markers', 'box', 0.00, '2025-05-02 14:22:06', '2025-05-16 08:12:46'),
-(188, 'STK-003', 'Long Folders (Kraft)', 'pieces', 0.00, '2025-05-02 14:24:31', NULL),
-(189, 'STK-004', 'Stapler w/ Pins', 'pieces', 0.00, '2025-05-02 14:24:31', NULL),
-(190, 'STK-005', 'Correction Tape', 'pieces', 0.00, '2025-05-02 14:27:13', NULL),
-(191, 'STK-006', 'Manila Paper', 'pieces', 0.00, '2025-05-02 14:27:13', NULL),
-(192, 'STK-007', 'Electrical Tape', 'pieces', 0.00, '2025-05-02 14:30:28', NULL),
-(193, 'STK-009', 'USB Flash Drive (32GB)', 'pieces', 0.00, '2025-05-02 14:32:51', '2025-05-16 08:18:05'),
-(194, 'STK-010', 'Mouse (Optical)', 'pieces', 0.00, '2025-05-02 14:32:51', '2025-05-16 08:18:05'),
+(186, 'OFF-FLORG-ZN6L-BND11', 'Bond Paper (A4)', '', 0.00, '2025-05-02 14:22:06', '2025-05-17 15:53:35'),
+(187, 'OFF-HILIT-QW033-CSE', 'Whiteboard Markers', 'box', 0.00, '2025-05-02 14:22:06', '2025-05-17 15:53:22'),
+(188, 'OFF-FLORG-LP2X-BOX31', 'Long Folders (Kraft)', 'pieces', 0.00, '2025-05-02 14:24:31', '2025-05-17 15:53:13'),
+(189, 'OFF-HILIT-YJ981-CVR', 'Stapler w/ Pins', 'pieces', 0.00, '2025-05-02 14:24:31', '2025-05-17 15:53:10'),
+(190, 'OFF-FLORG-WE5M-KIT44', 'Correction Tape', 'pieces', 0.00, '2025-05-02 14:27:13', '2025-05-17 15:52:55'),
+(191, 'OFF-FLORG-NP4C-BOX17', 'Manila Paper', 'pieces', 0.00, '2025-05-02 14:27:13', '2025-05-17 15:51:36'),
+(192, 'OFF-HILIT-UV992-SET', 'Electrical Tape', 'pieces', 0.00, '2025-05-02 14:30:28', '2025-05-17 15:51:27'),
+(193, 'OFF-FLORG-QR5V-KIT22', 'USB Flash Drive (32GB)', 'pieces', 0.00, '2025-05-02 14:32:51', '2025-05-17 15:51:18'),
+(194, 'OFF-HILIT-LX310-PAD', 'Mouse (Optical)', 'pieces', 0.00, '2025-05-02 14:32:51', '2025-05-17 15:51:09'),
 (195, NULL, 'Filing Cabinet (4-drawer)', 'pieces', 5200.00, '2025-05-02 14:37:23', NULL),
 (196, NULL, 'Stapler (Heavy Duty)', 'pieces', 650.00, '2025-05-02 14:37:23', NULL),
 (197, NULL, 'Monoblock Chair (White)', 'pieces', 350.00, '2025-05-02 14:39:09', NULL),
 (198, NULL, 'Monoblock Chair (White)', 'pieces', 600.00, '2025-05-02 14:39:09', NULL),
 (199, NULL, 'Optical Mouse', 'pieces', 400.00, '2025-05-02 14:40:36', NULL),
 (200, NULL, 'Flashlight (Rechargeable)', 'pieces', 950.00, '2025-05-02 14:43:02', NULL),
-(201, 'STK-1001', 'Laptop (Intel i5, 8GB RAM)', 'pieces', 32000.00, '2025-05-02 14:48:32', '2025-05-16 08:08:56'),
-(202, 'STK-1002', 'LED Projector', 'pieces', 18000.00, '2025-05-02 14:48:32', NULL),
-(203, 'STK-1003', 'Filing Cabinet (4-drawer)', 'pieces', 5200.00, '2025-05-02 14:51:21', NULL),
-(204, 'STK-1004', 'Heavy-Duty Stapler', 'pieces', 650.00, '2025-05-02 14:51:21', NULL),
-(205, 'STK-1005', 'Monoblock Chair (White)', 'pieces', 650.00, '2025-05-02 14:53:43', NULL),
-(206, 'STK-1006', 'Extension Cord (10 meters)', 'pieces', 600.00, '2025-05-02 14:53:43', NULL),
-(207, 'STK-1007', 'Wi-Fi Router', 'pieces', 2800.00, '2025-05-02 14:56:24', NULL),
-(208, 'STK-1008', 'Optical Mouse', 'pieces', 400.00, '2025-05-02 14:56:24', NULL),
-(209, 'STK-1009', 'Digital Multimeter', 'pieces', 1300.00, '2025-05-02 14:58:27', '2025-05-16 16:57:37'),
-(210, 'STK-1010', 'Rechargeable Flashlight', 'pieces', 950.00, '2025-05-02 14:58:27', NULL),
-(211, 'STK-1011', 'Office Table', 'pieces', 2000.00, '2025-05-03 16:00:51', '2025-05-06 12:17:14'),
-(212, 'STK-10013', 'Acer Laptop, i5 12th Gen 8gb', 'box', 50000.00, '2025-05-06 10:40:04', '2025-05-16 17:13:06'),
+(201, 'OFF-FLORG-KD7B-BND05', 'Laptop (Intel i5, 8GB RAM)', 'pieces', 32000.00, '2025-05-02 14:48:32', '2025-05-17 15:51:02'),
+(202, 'OFF-HILIT-JQ007-CVR', 'LED Projector', 'pieces', 18000.00, '2025-05-02 14:48:32', '2025-05-17 15:50:53'),
+(203, 'OFF-FLORG-WM2Y-BOX13', 'Filing Cabinet (4-drawer)', 'pieces', 5200.00, '2025-05-02 14:51:21', '2025-05-17 15:50:48'),
+(204, 'OFF-HILIT-ZR890-FAB', 'Heavy-Duty Stapler', 'pieces', 650.00, '2025-05-02 14:51:21', '2025-05-17 15:50:35'),
+(205, 'OFF-FLORG-MN1X-PCK01', 'Monoblock Chair (White)', 'pieces', 650.00, '2025-05-02 14:53:43', '2025-05-17 15:50:22'),
+(206, 'OFF-HILIT-XD204-CSE', 'Extension Cord (10 meters)', 'pieces', 600.00, '2025-05-02 14:53:43', '2025-05-17 15:50:20'),
+(207, 'ITM-LTOP-MBP14M3-2025-990,OFF-MARK-BLKEXPO-990', 'Wi-Fi Router', 'pieces', 2800.00, '2025-05-02 14:56:24', '2025-05-17 15:49:21'),
+(208, 'ITM-LTOP-MBP14M3-2025-904,OFF-MARK-BLKEXPO-904', 'Optical Mouse', 'pieces', 400.00, '2025-05-02 14:56:24', '2025-05-17 15:49:11'),
+(209, 'ITM-LTOP-MBP14M3-2025-839,OFF-MARK-BLKEXPO-839', 'Digital Multimeter', 'pieces', 1300.00, '2025-05-02 14:58:27', '2025-05-17 15:49:03'),
+(210, 'ITM-LTOP-MBP14M3-2025-725,OFF-MARK-BLKEXPO-725', 'Rechargeable Flashlight', 'pieces', 950.00, '2025-05-02 14:58:27', '2025-05-17 15:48:53'),
+(211, 'ITM-LTOP-MBP14M3-2025-678,OFF-MARK-BLKEXPO-678', 'Office Table', 'pieces', 2000.00, '2025-05-03 16:00:51', '2025-05-17 15:48:47'),
+(212, 'ITM-LTOP-MBP14M3-2025-554,OFF-MARK-BLKEXPO-554', 'Acer Laptop, i5 12th Gen 8gb', 'box', 50000.00, '2025-05-06 10:40:04', '2025-05-17 15:48:36'),
 (213, NULL, 'blue ballpen', 'box', 76.00, '2025-05-06 11:52:50', '2025-05-16 03:22:50'),
 (214, NULL, 'Laptop (Intel i5, 8GB RAM)', 'pieces', 21000.00, '2025-05-16 02:10:18', '2025-05-16 03:21:26'),
 (215, NULL, 'Acer Laptop, i5 12th Gen 8gb', 'pieces', 22000.00, '2025-05-16 02:31:32', '2025-05-16 03:17:43'),
 (216, NULL, 'Acer Laptop, i5 12th Gen 8gb', 'pieces', 23300.00, '2025-05-16 03:26:24', NULL),
-(217, 'STK-10023223', 'Acer Laptop, i5 12th Gen 8gb', 'box', 2133.00, '2025-05-16 03:41:04', NULL),
-(218, 'STK-030', 'Laptop (Intel i5, 8GB RAM)', 'pieces', 23000.00, '2025-05-16 07:18:43', '2025-05-16 08:15:40'),
+(217, 'ITM-LTOP-MBP14M3-2025-447,OFF-MARK-BLKEXPO-447', 'Acer Laptop, i5 12th Gen 8gb', 'box', 2133.00, '2025-05-16 03:41:04', '2025-05-17 15:48:18'),
+(218, 'ITM-LTOP-MBP14M3-2025-329,OFF-MARK-BLKEXPO-329', 'Laptop (Intel i5, 8GB RAM)', 'pieces', 23000.00, '2025-05-16 07:18:43', '2025-05-17 15:48:13'),
 (219, NULL, 'Acer Laptop, i5 12th Gen 8gb', 'pieces', 22222.00, '2025-05-16 07:41:00', '2025-05-16 08:09:14'),
-(220, 'STK-0029', 'Acer Laptop, i5 12th Gen 8gb', 'pieces', 0.00, '2025-05-16 07:50:37', '2025-05-16 08:16:32'),
-(221, 'STK-0030', 'Laptop (Intel i5, 8GB RAM)', 'pieces', 0.00, '2025-05-16 07:50:37', '2025-05-16 08:16:32'),
-(222, NULL, 'Acer Laptop, i5 12th Gen 8gb', 'pieces', 2222.00, '2025-05-16 16:27:17', NULL);
+(220, 'ITM-LTOP-MBP14M3-2025-218,OFF-MARK-BLKEXPO-218', 'Acer Laptop, i5 12th Gen 8gb', 'pieces', 0.00, '2025-05-16 07:50:37', '2025-05-17 15:48:00'),
+(221, 'ITM-LTOP-MBP14M3-2025-103,OFF-MARK-BLKEXPO-103', 'Laptop (Intel i5, 8GB RAM)', 'pieces', 0.00, '2025-05-16 07:50:37', '2025-05-17 15:47:34'),
+(222, NULL, 'Acer Laptop, i5 12th Gen 8gb', 'pieces', 2222.00, '2025-05-16 16:27:17', NULL),
+(223, 'ITM-LTOP-MBP14M3-2023-002', 'Laptop – Apple MacBook Pro 14 M3 Chip (2023)', 'pieces', 109990.00, '2025-05-17 15:06:36', NULL),
+(224, 'ITM-PRNT-ECO16600-A3-001', 'Printer – Epson EcoTank Pro ET-16600 A3 Wireless All-in-One', 'pieces', 59995.00, '2025-05-17 15:06:36', NULL),
+(225, 'OFF-STAP-BLK2025-002', 'Heavy-Duty Office Stapler', 'pieces', 500.00, '2025-05-17 15:12:10', NULL),
+(226, 'OFF-FLORG-WM3T-BOX02', 'Wall-Mount File Organizer – 3 Tier', 'box', 950.00, '2025-05-17 15:12:10', NULL),
+(227, 'OFF-MARK-BLKEXPO-002', 'Whiteboard Marker – Black', 'box', 280.00, '2025-05-17 15:17:12', NULL),
+(228, 'OFF-HILIT-ST006-FAB', 'Highlighter Pen Set – 5 Colors', 'box', 250.00, '2025-05-17 15:17:12', NULL),
+(229, 'ITM-LTOP-MBP14M3-2023-001', 'Laptop – Apple MacBook Pro 14 M3 Chip (2023)', 'pieces', 109990.00, '2025-05-17 15:19:48', NULL),
+(230, 'OFF-HILIT-ST005-FAB', 'Highlighter Pen Set – 5 Colors', 'pieces', 250.00, '2025-05-17 15:22:39', NULL),
+(231, 'OFF-FLORG-WM3T-BOX01', 'Wall-Mount File Organizer – 3 Tier', 'box', 950.00, '2025-05-17 15:22:39', NULL);
 
 -- --------------------------------------------------------
 
@@ -337,18 +365,20 @@ CREATE TABLE `par_items` (
 --
 
 INSERT INTO `par_items` (`par_item_id`, `par_id`, `item_id`, `quantity`, `article`, `remarks`, `property_number`, `created_at`) VALUES
-(34, 18, 176, 2, 'IT EQUIPMENT', 'Good condition', '2025-PAR-001', '2025-05-02 14:05:34'),
-(35, 18, 177, 10, 'IT EQUIPMENT', 'Good condition', '2025-PAR-002', '2025-05-02 14:05:34'),
-(36, 19, 178, 20, 'IT EQUIPMENT', 'Good condition', '2025-PAR-003', '2025-05-02 14:12:09'),
-(37, 19, 179, 25, 'IT EQUIPMENT', 'Good condition', '2025-PAR-004', '2025-05-02 14:12:09'),
-(38, 20, 180, 10, 'IT EQUIPMENT', 'Good condition', '2025-PAR-005', '2025-05-02 14:13:48'),
-(39, 20, 181, 100, 'IT EQUIPMENT', 'Good condition', '2025-PAR-006', '2025-05-02 14:13:48'),
-(40, 21, 182, 5, 'IT EQUIPMENT', 'Damaged', '2025-PAR-007', '2025-05-02 14:16:00'),
-(41, 21, 183, 1, 'IT EQUIPMENT', 'Good condition', '2025-PAR-008', '2025-05-02 14:16:00'),
-(42, 22, 184, 2, 'IT EQUIPMENT', 'Good condition', '04/24/2025', '2025-05-02 14:17:35'),
-(43, 22, 185, 4, 'IT EQUIPMENT', 'Damaged', '2025-PAR-010', '2025-05-02 14:17:36'),
-(44, 23, 212, 1, 'IT EQUIPMENT', 'Good condition', '2025-PAR-029', '2025-05-16 08:07:03'),
-(45, 23, 184, 3, 'IT EQUIPMENT', 'Good condition', '2025-PAR-030', '2025-05-16 08:07:03');
+(34, 18, 176, 2, 'IT EQUIPMENT', 'Good condition', 'ITM-PRNT-EPSC3250-A3-013', '2025-05-02 14:05:34'),
+(35, 18, 177, 10, 'IT EQUIPMENT', 'Good condition', 'ITM-LTOP-DELLXPS13-2025-012', '2025-05-02 14:05:34'),
+(36, 19, 178, 20, 'IT EQUIPMENT', 'Good condition', 'ITM-MNTR-LG24BLK-HD-011', '2025-05-02 14:12:09'),
+(37, 19, 179, 25, 'IT EQUIPMENT', 'Good condition', 'ITM-LTOP-MBP14M3-2025-010', '2025-05-02 14:12:09'),
+(38, 20, 180, 10, 'IT EQUIPMENT', 'Good condition', 'ITM-PRNT-BRO510W-A3-009', '2025-05-02 14:13:48'),
+(39, 20, 181, 100, 'IT EQUIPMENT', 'Good condition', 'ITM-LTOP-ASUSVIVO-2025-008', '2025-05-02 14:13:48'),
+(40, 21, 182, 5, 'IT EQUIPMENT', 'Damaged', 'ITM-PRNT-HP425DN-A4-007', '2025-05-02 14:16:00'),
+(42, 22, 184, 2, 'IT EQUIPMENT', 'Good condition', 'ITM-LTOP-LNVY740G-2025-005', '2025-05-02 14:17:35'),
+(43, 22, 185, 4, 'IT EQUIPMENT', 'Damaged', 'ITM-DESK-DTK3090-XL-001', '2025-05-02 14:17:36'),
+(44, 23, 212, 1, 'IT EQUIPMENT', 'Good condition', 'ITM-PRNT-ECO16600-A3-004', '2025-05-16 08:07:03'),
+(45, 23, 184, 3, 'IT EQUIPMENT', 'Good condition', 'ITM-LTOP-MBP14M3-2025-003', '2025-05-16 08:07:03'),
+(46, 24, 223, 1, 'IT EQUIPMENT', 'Non-consumable', 'ITM-LTOP-MBP14M3-2023-002', '2025-05-17 15:36:26'),
+(47, 24, 224, 1, 'IT EQUIPMENT', 'Non-consumable', 'ITM-PRNT-ECO16600-A3-001', '2025-05-17 15:36:26'),
+(48, 25, 223, 1, 'IT EQUIPMENT', 'Non-consumable', 'ITM-LTOP-MBP14M3-2023-001', '2025-05-17 15:38:13');
 
 -- --------------------------------------------------------
 
@@ -381,7 +411,9 @@ INSERT INTO `property_acknowledgment_receipts` (`par_id`, `entity_id`, `par_no`,
 (20, 32, 'PAR-2025-003', '2025-04-06', 'Maricel L. Gomez', 'Teacher II', '2025-04-28', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-04-28', '2025-05-02 14:13:48', '2025-05-02 14:13:48'),
 (21, 32, 'PAR-2025-004', '2025-05-02', 'Elmer Santos', 'ICT Coordinator / Computer Lab', '2025-04-23', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-04-23', '2025-05-02 14:16:00', '2025-05-02 14:16:00'),
 (22, 32, 'PAR-2025-005', '2025-04-22', 'Camille Navarro', 'TLE Teacher', '2025-04-28', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-04-28', '2025-05-02 14:17:35', '2025-05-02 14:17:35'),
-(23, 32, 'PAR-2025-0029', '2025-05-16', 'Steven Tinggoy', 'Teacher II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-16 08:07:03', '2025-05-16 08:07:03');
+(23, 32, 'PAR-2025-0029', '2025-05-16', 'Steven Tinggoy', 'Teacher II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-16 08:07:03', '2025-05-16 08:07:03'),
+(24, 32, 'PAR-25-05-002', '2025-05-14', 'Jake Batumbakal', 'Teacher II', '2025-05-14', 'Stefany Jane Bernabe Labadan', 'Administrative Office II', '2025-05-14', '2025-05-17 15:36:26', '2025-05-17 15:36:26'),
+(25, 32, 'PAR-25-05-001', '2025-05-15', 'Jino Taer', 'Teacher II', '2025-05-15', 'Stefany Jane Bernabe Labadan', 'Administrative Office II', '2025-05-15', '2025-05-17 15:38:13', '2025-05-17 15:38:13');
 
 -- --------------------------------------------------------
 
@@ -423,7 +455,8 @@ INSERT INTO `requisition_and_issue_slips` (`ris_id`, `entity_id`, `division`, `o
 (28, 34, 'Malaybalay', 'GAS Department', '101-4620-REG', 'RIS-2025-003', 'GAD Assembly', 'Maricel Gomez', 'Teacher II', '2025-04-27', 'Dr. Joanna May Escobar', 'Registrar Head', '2025-05-02', 'STEFANY JANE B. LABADAN', 'Administrative Officer II', '2025-05-02', 'Maricel Gomez', 'Teacher II', '2025-05-02', '2025-05-02 14:27:13', '2025-05-02 14:27:13'),
 (29, 34, 'Malaybalay', 'STEM Department', '101-4633-TLE', 'RIS-2025-004', 'Stem days', 'Camille Navarro', 'Science Teacher', '2025-04-29', 'Engr. Victor Z. Javier', 'Senior High School Principal II', '2025-04-29', 'STEFANY JANE B. LABADAN', 'Administrative Officer II', '2025-05-02', 'Camille Navarro', 'Science Teacher', '2025-05-02', '2025-05-02 14:30:28', '2025-05-02 14:30:28'),
 (30, 32, 'Malaybalay', 'TVL Department', '101-4650-ICT', 'RIS-2025-005', 'Comlab Equipment', 'Elmer Santos', 'ICT Coordinator', '2025-04-27', 'Liza Montano', 'ICT Supervisor', '2025-05-02', 'STEFANY JANE B. LABADAN', 'Administrative Officer II', '2025-05-02', 'Elmer Santos', 'ICT Coordinator', '2025-05-02', '2025-05-02 14:32:51', '2025-05-02 14:32:51'),
-(31, 34, 'Malaybalay', 'High School Department', '122-4650-ICT', 'RIS-2025-029', 'ICT day', 'Emmanuel Canete', 'Teacher II', '2025-05-16', 'Jannacole Macapuno', 'Secondary School Principal II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Administrative Officer II', '2025-05-16', 'Emmanuel Canete', 'Teacher II', '2025-05-16', '2025-05-16 07:50:37', '2025-05-16 07:50:37');
+(31, 34, 'Malaybalay', 'High School Department', '122-4650-ICT', 'RIS-2025-029', 'ICT day', 'Emmanuel Canete', 'Teacher II', '2025-05-16', 'Jannacole Macapuno', 'Secondary School Principal II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Administrative Officer II', '2025-05-16', 'Emmanuel Canete', 'Teacher II', '2025-05-16', '2025-05-16 07:50:37', '2025-05-16 07:50:37'),
+(32, 32, 'Malaybalay', 'High School Department', '111-4650-ICT', 'RIS-2025-0010', 'Comlab Equipment', 'Samantha Boone', 'Teacher II', '2025-05-18', 'Jannacole Macapuno', 'Secondary School Principal II', '2025-05-18', 'STEFANY JANE B. LABADAN', 'Administrative Officer II', '2025-05-18', 'Samantha Boone', 'Teacher II', '2025-05-18', '2025-05-17 16:01:00', '2025-05-17 16:40:32');
 
 -- --------------------------------------------------------
 
@@ -457,8 +490,9 @@ INSERT INTO `ris_items` (`ris_item_id`, `ris_id`, `item_id`, `requested_qty`, `s
 (42, 29, 192, 3, 'Yes', 3, 'Consumable', '2025-05-02 14:30:28'),
 (43, 30, 193, 5, 'Yes', 5, 'Non-consumable', '2025-05-02 14:32:51'),
 (44, 30, 194, 5, 'Yes', 5, 'Non-consumable', '2025-05-02 14:32:51'),
-(45, 31, 220, 2, 'Yes', 2, '', '2025-05-16 07:50:37'),
-(46, 31, 221, 1, 'Yes', 1, '', '2025-05-16 07:50:37');
+(45, 31, 220, 2, 'Yes', 2, 'Non-consumable', '2025-05-16 07:50:37'),
+(46, 31, 221, 1, 'Yes', 1, 'Non-consumable', '2025-05-16 07:50:37'),
+(47, 32, 223, 2, 'yes', 2, 'Non-Consumable', '2025-05-17 16:37:13');
 
 -- --------------------------------------------------------
 
@@ -482,7 +516,8 @@ INSERT INTO `suppliers` (`supplier_id`, `supplier_name`, `created_at`, `updated_
 (16, 'ML store', '2025-05-02 14:51:21', '2025-05-02 14:51:21'),
 (17, 'Division', '2025-05-02 14:53:43', '2025-05-02 14:53:43'),
 (18, 'Shopinas', '2025-05-02 14:56:24', '2025-05-02 14:56:24'),
-(19, 'qweqwe', '2025-05-16 03:41:04', '2025-05-16 03:41:04');
+(19, 'qweqwe', '2025-05-16 03:41:04', '2025-05-16 03:41:04'),
+(20, 'PJ Store', '2025-05-17 15:22:39', '2025-05-17 15:22:39');
 
 --
 -- Indexes for dumped tables
@@ -609,61 +644,61 @@ ALTER TABLE `entities`
 -- AUTO_INCREMENT for table `iar_items`
 --
 ALTER TABLE `iar_items`
-  MODIFY `iar_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `iar_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 
 --
 -- AUTO_INCREMENT for table `ics_items`
 --
 ALTER TABLE `ics_items`
-  MODIFY `ics_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `ics_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `inspection_acceptance_reports`
 --
 ALTER TABLE `inspection_acceptance_reports`
-  MODIFY `iar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `iar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `inventory_custodian_slips`
 --
 ALTER TABLE `inventory_custodian_slips`
-  MODIFY `ics_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `ics_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=223;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=232;
 
 --
 -- AUTO_INCREMENT for table `par_items`
 --
 ALTER TABLE `par_items`
-  MODIFY `par_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `par_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `property_acknowledgment_receipts`
 --
 ALTER TABLE `property_acknowledgment_receipts`
-  MODIFY `par_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `par_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `requisition_and_issue_slips`
 --
 ALTER TABLE `requisition_and_issue_slips`
-  MODIFY `ris_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `ris_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `ris_items`
 --
 ALTER TABLE `ris_items`
-  MODIFY `ris_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `ris_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `suppliers`
 --
 ALTER TABLE `suppliers`
-  MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables

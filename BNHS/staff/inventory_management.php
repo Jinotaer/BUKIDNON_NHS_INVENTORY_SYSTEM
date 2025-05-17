@@ -182,15 +182,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         
         // Insert into items table
         $item_stmt = $mysqli->prepare("INSERT INTO items (
-          stock_no, item_description, unit, unit_cost, estimated_useful_life
-        ) VALUES (?, ?, ?, ?, ?)");
+          stock_no, item_description, unit, unit_cost
+        ) VALUES (?, ?, ?, ?)");
         
         if ($item_stmt === false) {
           throw new Exception("MySQL prepare failed for items: " . $mysqli->error);
         }
 
         $estimated_life = 5; // Default value, can be adjusted
-        $item_stmt->bind_param("sssdi", $stock_no, $item_description, $unit, $unit_price, $estimated_life);
+        $item_stmt->bind_param("sssd", $stock_no, $item_description, $unit, $unit_price);
 
         if (!$item_stmt->execute()) {
           throw new Exception("Error inserting item: " . $item_stmt->error);
@@ -592,7 +592,9 @@ require_once('partials/_head.php');
           <select name="unit[]" class="underline-input" required>
             <option value="">Select Unit</option>
             <option value="box">box</option>
+            <option value="pack">pack</option>
             <option value="pieces">pieces</option>
+            <option value="set">set</option>
           </select>
         </td>
         <td><input type="number" name="quantity[]" class="underline-input" min="1" required></td>

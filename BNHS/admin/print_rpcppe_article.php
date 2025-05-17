@@ -284,7 +284,7 @@ ob_start();
             <?php
             // Query to get items filtered by article
             $ret = "SELECT par.par_id as id, par.par_no,
-                    i.item_description, i.unit_cost, i.unit, i.estimated_useful_life as estimated_life,
+                    i.item_description, i.unit_cost, i.unit,
                     pi.quantity, pi.property_number as inventory_item_no, pi.remarks, pi.article,
                     (pi.quantity * i.unit_cost) as total_amount
                     FROM property_acknowledgment_receipts par

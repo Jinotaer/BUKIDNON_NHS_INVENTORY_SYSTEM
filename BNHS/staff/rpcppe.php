@@ -102,7 +102,7 @@ require_once('partials/_head.php');
                     <th scope="col">Unit Value</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Total Amount</th>
-                    <th scope="col">Date Acquired</th>
+                    <!-- <th scope="col">Date Acquired</th> -->
                     <th scope="col">Remarks</th>
                   </tr>
                 </thead>
@@ -159,7 +159,7 @@ require_once('partials/_head.php');
                       <td><?php echo isset($par->unit_cost) ? $par->unit_cost : ''; ?></td>
                       <td><?php echo isset($par->quantity) ? $par->quantity : ''; ?></td>
                       <td><?php echo isset($par->total_amount) ? $par->total_amount : ''; ?></td>
-                      <td><?php echo isset($par->date_acquired) ? $par->date_acquired : ''; ?></td>
+                      <!-- <td><?php echo isset($par->date_acquired) ? $par->date_acquired : ''; ?></td> -->
                       <td><?php echo isset($par->remarks) ? $par->remarks : ''; ?></td>
                     </tr>
                   <?php }
