@@ -136,7 +136,7 @@ require_once('partials/_head.php');
                     <!-- <th scope="col">Property Number</th> -->
                     <th scope="col">Date Acquired</th>
                     <!-- <th scope="col">Unit Cost</th> -->
-                    <th scope="col">Total Cost</th>
+                    <!-- <th scope="col">Total Cost</th> -->
                     <th scope="col">User Name</th>
                     <th scope="col">Position/Office</th>
                     <th scope="col">Date</th>
@@ -186,7 +186,7 @@ require_once('partials/_head.php');
                       <!-- <td><?php echo $item->property_number; ?></td> -->
                       <td><?php echo !empty($par->date_acquired) ? date('M d, Y', strtotime($par->date_acquired)) : ''  ; ?></td>
                       <!-- <td><?php echo $item->unit_cost; ?></td> -->
-                      <td><?php echo $item->total_amount; ?></td>
+                      <!-- <td><?php echo $item->total_amount; ?></td> -->
                       <td><?php echo $par->end_user_name; ?></td>
                       <td><?php echo $par->receiver_position; ?></td>
                       <td><?php echo !empty($par->receiver_date) ? date('M d, Y', strtotime($par->receiver_date)) : ''; ?></td>

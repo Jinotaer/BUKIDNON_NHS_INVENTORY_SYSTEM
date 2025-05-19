@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2025 at 06:56 PM
+-- Generation Time: May 19, 2025 at 06:37 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -63,7 +63,6 @@ CREATE TABLE `bnhs_staff` (
 --
 
 INSERT INTO `bnhs_staff` (`staff_id`, `staff_name`, `staff_email`, `staff_password`, `created_at`, `resetcode`) VALUES
-('2301106755@stud', 'Stefany Jane Bernabe', 'stefaniejane178@gmail.com', '5f32e74898dfb34f00e92e7a7dbedf5cad150725', '2025-05-16 09:21:22.565780', NULL),
 ('23011076222', 'Custodian', '2301106754@student.buksu.edu.ph', '06f01d7b189dc3499bd88377d44572559323e989', '2025-05-16 07:04:03.737221', NULL),
 ('2301107654', 'User', 'u7382361@gmail.com', '52ff8d0b1e1a0665aa7b0cbe6626a25415f92e27', '2025-05-16 08:39:10.491791', NULL),
 ('2301107655', 'Jane Jane', 'jjane0248@gmail.com', '50d740a0292279ad49f86b08f0c10a0e932d8ea1', '2025-05-16 12:12:10.006246', NULL),
@@ -165,18 +164,16 @@ INSERT INTO `ics_items` (`ics_item_id`, `ics_id`, `item_id`, `quantity`, `articl
 (59, 60, 196, 2, 'SEMI-EXPENDABLE FURNITURE AND FIXTURES', 'Good condition', 10, 'ICS-2025-004', '2025-05-02 14:37:23'),
 (60, 61, 197, 2, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Good condition', 10, 'ICS-2025-005', '2025-05-02 14:39:09'),
 (61, 61, 198, 10, 'SEMI- EXPENDABLE SCIENCE AND MATH EQUIPMENT', 'Good condition', 10, 'ICS-2025-006', '2025-05-02 14:39:09'),
-(62, 62, 183, 2, 'SEMI- EXPENDABLE IT EQUIPMENT', 'Good condition', 10, 'ICS-2025-007', '2025-05-02 14:40:36'),
-(63, 62, 199, 5, 'SEMI- EXPENDABLE IT EQUIPMENT', 'Good condition', 10, 'ICS-2025-008', '2025-05-02 14:40:36'),
 (66, 64, 213, 2, 'SEMI-EXPENDABLE FURNITURE AND FIXTURES', 'Non-consumable', 6, 'ICS-2025-0020', '2025-05-06 11:52:50'),
 (67, 65, 214, 2, 'SEMI- EXPENDABLE SCIENCE AND MATH EQUIPMENT', 'Good condition', 8, 'ICS-2025-0021', '2025-05-16 02:10:18'),
 (68, 66, 215, 2, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'sadadsad', 7, 'ICS-2025-00322', '2025-05-16 02:31:32'),
 (69, 67, 216, 2, 'SEMI- EXPENDABLE IT EQUIPMENT', 'Good condition', 9, 'ICS-2025-00923', '2025-05-16 03:26:24'),
-(70, 68, 219, 2, 'SEMI- EXPENDABLE IT EQUIPMENT', 'Good condition', 10, 'ICS-2025-0029', '2025-05-16 07:41:00'),
 (71, 69, 222, 2, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Good condition', 5, 'ICS-2025-007	999', '2025-05-16 16:27:17'),
 (72, 70, 225, 1, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Non-consumable', 5, 'OFF-STAP-BLK2025-002', '2025-05-17 15:28:03'),
 (73, 70, 226, 1, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Non-consumable', 5, 'OFF-FLORG-WM3T-BOX02', '2025-05-17 15:28:03'),
 (74, 71, 226, 1, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Non-consumable', 5, 'OFF-FLORG-WM3T-BOX01', '2025-05-17 15:30:17'),
-(75, 72, 225, 1, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Non-consumable', 5, 'OFF-STAP-BLK2025-001', '2025-05-17 15:31:51');
+(75, 72, 225, 1, 'SEMI- EXPENDABLE OFFICE PROPERTY', 'Non-consumable', 5, 'OFF-STAP-BLK2025-001', '2025-05-17 15:31:51'),
+(76, 73, 233, 1, 'SEMI- EXPENDABLE IT EQUIPMENT', 'Good condition', 10, 'OFF-STAP-BLK2025-023', '2025-05-19 00:56:04');
 
 -- --------------------------------------------------------
 
@@ -197,11 +194,11 @@ CREATE TABLE `inspection_acceptance_reports` (
   `receiver_name` varchar(100) NOT NULL,
   `teacher_id` varchar(50) DEFAULT NULL,
   `position` varchar(100) DEFAULT NULL,
-  `date_inspected` date DEFAULT NULL,
+  `date_inspected` date NOT NULL,
   `inspectors` text DEFAULT NULL,
   `barangay_councilor` varchar(100) DEFAULT NULL,
   `pta_observer` varchar(100) DEFAULT NULL,
-  `date_received` date DEFAULT NULL,
+  `date_received` date NOT NULL,
   `property_custodian` varchar(100) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -213,7 +210,7 @@ CREATE TABLE `inspection_acceptance_reports` (
 
 INSERT INTO `inspection_acceptance_reports` (`iar_id`, `entity_id`, `supplier_id`, `iar_no`, `po_no_date`, `req_office`, `responsibility_center`, `iar_date`, `invoice_no_date`, `receiver_name`, `teacher_id`, `position`, `date_inspected`, `inspectors`, `barangay_councilor`, `pta_observer`, `date_received`, `property_custodian`, `created_at`, `updated_at`) VALUES
 (66, 32, 15, 'IAR-2025-001', 'PO-25-001', 'Accounting Office', '621', '2025-05-02', 'INV-4521', 'Engr. Maria Fe Navarro', 'TID-05230', 'Supply Officer', '2025-05-02', 'Joan Savage', 'Hon. Emily Tan', 'Mr. Roberto Cruz', '2025-05-02', 'Stefany Jane Bernabe', '2025-05-02 14:48:32', '2025-05-17 15:45:02'),
-(67, 33, 16, 'IAR-2025-002', 'PO-25-002', 'HUMSS Department', '622', '2025-05-02', 'NV-4522', 'Angelie Cole', 'TID-05229', 'Teacher II', '2025-05-02', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-02', 'Stefany Jane Bernabe', '2025-05-02 14:51:21', '2025-05-17 15:44:56'),
+(67, 33, 16, 'IAR-2025-002', 'PO-25-002', 'HUMSS Department', '622', '2025-05-02', 'NV-4522', 'Angelie Cole', 'TID-05229', 'Teacher II', '2025-05-02', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-02', 'Stefany Jane Bernabe', '2025-05-02 14:51:21', '2025-05-17 17:11:32'),
 (68, 34, 17, '23-04-003', 'PO-25-003', 'STEM Department', '623', '2025-05-02', 'INV-4523', 'Anthony Black', 'TID-05228', 'Teacher II', '2025-05-02', 'Joan Savaege', 'Hon. Pedro M. Luna', 'Lapids lar', '2025-05-02', 'Stefany Jane Bernabe', '2025-05-02 14:53:43', '2025-05-17 15:44:51'),
 (69, 34, 18, 'IAR-2025-004', 'PO-25-004', 'High School Department', '624', '2025-05-02', 'INV-4524', 'Angelie Cole', 'TID-05227', 'Head Teacher III', '2025-05-02', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-02', 'Stefany Jane Bernabe', '2025-05-02 14:56:24', '2025-05-17 15:44:42'),
 (70, 33, 16, 'IAR-2025-005', 'PO-25-005', 'ABM Department', '625', '2025-05-02', 'INV-4525', 'Jerome Villanueva', 'TID-42123', 'Teacher III', '2025-05-02', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-02', 'Stefany Jane Bernabe', '2025-05-02 14:58:27', '2025-05-17 15:44:33'),
@@ -223,7 +220,8 @@ INSERT INTO `inspection_acceptance_reports` (`iar_id`, `entity_id`, `supplier_id
 (79, 32, 17, 'none', 'PO-25-009', 'GAS Department', '213', '2025-05-11', 'INV-4529', 'John Cena', 'TID-63728', 'Teacher II', '2025-05-11', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-11', 'Stefany Jane Bernabe', '2025-05-17 15:12:10', '2025-05-17 15:43:23'),
 (81, 32, 17, '25-05-004', 'PO-25-010', 'GAS Department', 'none', '2025-05-11', 'INV-4530', 'John Cena', 'TID-63728', 'Teacher II', '2025-05-11', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-11', 'Stefany Jane Bernabe', '2025-05-17 15:17:12', '2025-05-17 15:43:29'),
 (82, 32, 17, '25-05-003', 'PO-25-011', 'ABM Department', 'none', '2025-05-12', 'INV-4531', 'Jino Taer', 'TID-52672', 'Teacher II', '2025-05-12', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-12', 'Stefany Jane Bernabe', '2025-05-17 15:19:48', '2025-05-17 15:43:34'),
-(83, 34, 20, '25-05-002', 'PO-25-012', 'STEM Department', 'none', '2025-05-13', 'INV-4532', 'John Pruds Colot', 'TID-74545', 'Teacher II', '2025-05-13', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-13', 'Stefany Jane Bernabe', '2025-05-17 15:22:39', '2025-05-17 15:43:41');
+(83, 34, 20, '25-05-002', 'PO-25-012', 'STEM Department', 'none', '2025-05-13', 'INV-4532', 'John Pruds Colot', 'TID-74545', 'Teacher II', '2025-05-13', 'Joan Savaege', 'Brain Nelson', 'Lapids lar', '2025-05-13', 'Stefany Jane Bernabe', '2025-05-17 15:22:39', '2025-05-17 15:43:41'),
+(84, 33, 18, 'IAR-2025-022', 'PO-25-022', 'Office of the Principal', '631', '2025-05-14', 'INV-4533', 'Angelie Cole', 'TID-2218', 'Teacher II', '2025-05-19', 'Joan Savage', 'Brain Nelson', 'Lapids lar', '2025-05-19', 'Stefany Jane Bernabe', '2025-05-19 00:52:06', '2025-05-19 00:52:06');
 
 -- --------------------------------------------------------
 
@@ -253,17 +251,15 @@ INSERT INTO `inventory_custodian_slips` (`ics_id`, `entity_id`, `ics_no`, `end_u
 (59, 33, 'ICS-2025-001', 'Claude vergara', 'Teacher II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-02 14:35:45', '2025-05-16 05:07:28'),
 (60, 34, 'ICS-2025-002', 'Alexis Barber', 'Teacher II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-02 14:37:23', '2025-05-16 05:07:58'),
 (61, 32, 'ICS-2025-003', 'Vincent tinggoy', 'Teacher II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-02 14:39:09', '2025-05-16 05:08:03'),
-(62, 33, 'ICS-2025-004', 'rinz tagalicod', 'Teacher II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-02 14:40:36', '2025-05-16 05:08:12'),
-(63, 34, 'ICS-2025-005', 'Emmanuel canete', 'Teacher II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-02 14:43:02', '2025-05-16 05:08:16'),
 (64, 35, 'ICS-2025-0020', 'toff tinggoy', 'Teacher II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-06 11:52:50', '2025-05-16 03:16:12'),
 (65, 34, 'ICS-2025-0021', 'Steven sshu', 'Teacher II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-16 02:10:17', '2025-05-16 05:08:40'),
 (66, 35, 'ICS-2025-0022', 'Toff Vergara', 'Teacher II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-16 02:31:32', '2025-05-16 03:16:50'),
 (67, 34, 'ICS-2025-0023', 'Camille Navarro', 'TLE Instructor', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-16 03:26:24', '2025-05-16 03:26:24'),
-(68, 34, 'ICS-2025-0029', 'Rinz Tagalogod', 'Teacher II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-16', '2025-05-16 07:41:00', '2025-05-16 07:41:00'),
 (69, 32, 'ICS-2025-00222', 'Anthony Black', 'Teacher II', '2025-05-17', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-17', '2025-05-16 16:27:17', '2025-05-16 16:27:17'),
 (70, 32, 'ICS-25-05-003', 'John Cena', 'TEACHER II', '2025-05-10', 'Stefany Jane Bernabe Labadan', 'Administrative Office II', '2025-05-10', '2025-05-17 15:28:03', '2025-05-17 15:28:03'),
 (71, 34, 'ICS-25-05-002', 'John Pruds Colot', 'TEACHER II', '2025-05-11', 'STEFANY JANE B. LABADAN', 'Administrative Office II', '2025-05-11', '2025-05-17 15:30:17', '2025-05-17 15:30:17'),
-(72, 32, 'ICS-25-05-001', 'Steven Benedict Tado Bernabe', 'Teacher II', '2025-05-13', 'Stefany Jane Bernabe Labadan', 'Administrative Office II', '2025-05-13', '2025-05-17 15:31:51', '2025-05-17 15:31:51');
+(72, 32, 'ICS-25-05-001', 'Steven Benedict Tado Bernabe', 'Teacher II', '2025-05-13', 'Stefany Jane Bernabe Labadan', 'Administrative Office II', '2025-05-13', '2025-05-17 15:31:51', '2025-05-17 15:31:51'),
+(73, 33, 'ICS-2025-023', 'Samantha Boone', 'Teacher II', '2025-05-19', 'STEFANY JANE B. LABADAN', 'Property Custodian', '2025-05-19', '2025-05-19 00:56:04', '2025-05-19 00:56:04');
 
 -- --------------------------------------------------------
 
@@ -322,7 +318,7 @@ INSERT INTO `items` (`item_id`, `stock_no`, `item_description`, `unit`, `unit_co
 (209, 'ITM-LTOP-MBP14M3-2025-839,OFF-MARK-BLKEXPO-839', 'Digital Multimeter', 'pieces', 1300.00, '2025-05-02 14:58:27', '2025-05-17 15:49:03'),
 (210, 'ITM-LTOP-MBP14M3-2025-725,OFF-MARK-BLKEXPO-725', 'Rechargeable Flashlight', 'pieces', 950.00, '2025-05-02 14:58:27', '2025-05-17 15:48:53'),
 (211, 'ITM-LTOP-MBP14M3-2025-678,OFF-MARK-BLKEXPO-678', 'Office Table', 'pieces', 2000.00, '2025-05-03 16:00:51', '2025-05-17 15:48:47'),
-(212, 'ITM-LTOP-MBP14M3-2025-554,OFF-MARK-BLKEXPO-554', 'Acer Laptop, i5 12th Gen 8gb', 'box', 50000.00, '2025-05-06 10:40:04', '2025-05-17 15:48:36'),
+(212, 'ITM-LTOP-MBP14M3-2025-554,OFF-MARK-BLKEXPO-554', 'Acer Laptop, i5 12th Gen 8gb', 'box', 51000.00, '2025-05-06 10:40:04', '2025-05-19 02:59:17'),
 (213, NULL, 'blue ballpen', 'box', 76.00, '2025-05-06 11:52:50', '2025-05-16 03:22:50'),
 (214, NULL, 'Laptop (Intel i5, 8GB RAM)', 'pieces', 21000.00, '2025-05-16 02:10:18', '2025-05-16 03:21:26'),
 (215, NULL, 'Acer Laptop, i5 12th Gen 8gb', 'pieces', 22000.00, '2025-05-16 02:31:32', '2025-05-16 03:17:43'),
@@ -340,8 +336,11 @@ INSERT INTO `items` (`item_id`, `stock_no`, `item_description`, `unit`, `unit_co
 (227, 'OFF-MARK-BLKEXPO-002', 'Whiteboard Marker – Black', 'box', 280.00, '2025-05-17 15:17:12', NULL),
 (228, 'OFF-HILIT-ST006-FAB', 'Highlighter Pen Set – 5 Colors', 'box', 250.00, '2025-05-17 15:17:12', NULL),
 (229, 'ITM-LTOP-MBP14M3-2023-001', 'Laptop – Apple MacBook Pro 14 M3 Chip (2023)', 'pieces', 109990.00, '2025-05-17 15:19:48', NULL),
-(230, 'OFF-HILIT-ST005-FAB', 'Highlighter Pen Set – 5 Colors', 'pieces', 250.00, '2025-05-17 15:22:39', NULL),
-(231, 'OFF-FLORG-WM3T-BOX01', 'Wall-Mount File Organizer – 3 Tier', 'box', 950.00, '2025-05-17 15:22:39', NULL);
+(230, 'OFF-HILIT-ST005-FAB', 'Highlighter Pen Set – 5 Colors', 'pieces', 250.00, '2025-05-17 15:22:39', '2025-05-19 03:44:35'),
+(231, 'OFF-FLORG-WM3T-BOX01', 'Wall-Mount File Organizer – 3 Tier', 'box', 950.00, '2025-05-17 15:22:39', NULL),
+(232, 'OFF-HILIT-ST009-FAB', 'Laptop – Apple MacBook Pro 14 M3 Chip (2023)', 'pieces', 60000.00, '2025-05-19 00:52:07', '2025-05-19 01:11:44'),
+(233, NULL, 'Acer Laptop, i5 12th Gen 8gb', 'pieces', 42000.00, '2025-05-19 00:56:04', '2025-05-19 01:15:05'),
+(234, 'OFF-HILIT-QW043-CSE', 'blue ballpen', 'box', 0.00, '2025-05-19 01:02:09', NULL);
 
 -- --------------------------------------------------------
 
@@ -456,7 +455,8 @@ INSERT INTO `requisition_and_issue_slips` (`ris_id`, `entity_id`, `division`, `o
 (29, 34, 'Malaybalay', 'STEM Department', '101-4633-TLE', 'RIS-2025-004', 'Stem days', 'Camille Navarro', 'Science Teacher', '2025-04-29', 'Engr. Victor Z. Javier', 'Senior High School Principal II', '2025-04-29', 'STEFANY JANE B. LABADAN', 'Administrative Officer II', '2025-05-02', 'Camille Navarro', 'Science Teacher', '2025-05-02', '2025-05-02 14:30:28', '2025-05-02 14:30:28'),
 (30, 32, 'Malaybalay', 'TVL Department', '101-4650-ICT', 'RIS-2025-005', 'Comlab Equipment', 'Elmer Santos', 'ICT Coordinator', '2025-04-27', 'Liza Montano', 'ICT Supervisor', '2025-05-02', 'STEFANY JANE B. LABADAN', 'Administrative Officer II', '2025-05-02', 'Elmer Santos', 'ICT Coordinator', '2025-05-02', '2025-05-02 14:32:51', '2025-05-02 14:32:51'),
 (31, 34, 'Malaybalay', 'High School Department', '122-4650-ICT', 'RIS-2025-029', 'ICT day', 'Emmanuel Canete', 'Teacher II', '2025-05-16', 'Jannacole Macapuno', 'Secondary School Principal II', '2025-05-16', 'STEFANY JANE B. LABADAN', 'Administrative Officer II', '2025-05-16', 'Emmanuel Canete', 'Teacher II', '2025-05-16', '2025-05-16 07:50:37', '2025-05-16 07:50:37'),
-(32, 32, 'Malaybalay', 'High School Department', '111-4650-ICT', 'RIS-2025-0010', 'Comlab Equipment', 'Samantha Boone', 'Teacher II', '2025-05-18', 'Jannacole Macapuno', 'Secondary School Principal II', '2025-05-18', 'STEFANY JANE B. LABADAN', 'Administrative Officer II', '2025-05-18', 'Samantha Boone', 'Teacher II', '2025-05-18', '2025-05-17 16:01:00', '2025-05-17 16:40:32');
+(32, 32, 'Malaybalay', 'High School Department', '111-4650-ICT', 'RIS-2025-0010', 'Comlab Equipment', 'Samantha Boone', 'Teacher II', '2025-05-18', 'Jannacole Macapuno', 'Secondary School Principal II', '2025-05-18', 'STEFANY JANE B. LABADAN', 'Administrative Officer II', '2025-05-18', 'Samantha Boone', 'Teacher II', '2025-05-18', '2025-05-17 16:01:00', '2025-05-17 16:40:32'),
+(33, 33, 'Malaybalay', 'HUMSS Department', '121-4580-SCI', 'RIS-2025-030', 'Final Exam', 'Angela Reyes', 'Teacher II', '2025-05-19', 'Jannacole Macapuno', 'Secondary School Principal II', '2025-05-19', 'STEFANY JANE B. LABADAN', 'Administrative Officer II', '2025-05-19', 'Angela Reyes', 'Teacher II', '2025-05-19', '2025-05-19 01:02:09', '2025-05-19 01:02:09');
 
 -- --------------------------------------------------------
 
@@ -492,7 +492,8 @@ INSERT INTO `ris_items` (`ris_item_id`, `ris_id`, `item_id`, `requested_qty`, `s
 (44, 30, 194, 5, 'Yes', 5, 'Non-consumable', '2025-05-02 14:32:51'),
 (45, 31, 220, 2, 'Yes', 2, 'Non-consumable', '2025-05-16 07:50:37'),
 (46, 31, 221, 1, 'Yes', 1, 'Non-consumable', '2025-05-16 07:50:37'),
-(47, 32, 223, 2, 'yes', 2, 'Non-Consumable', '2025-05-17 16:37:13');
+(47, 32, 223, 2, 'yes', 2, 'Non-Consumable', '2025-05-17 16:37:13'),
+(48, 33, 234, 20, 'yes', 20, 'Consumable', '2025-05-19 01:02:09');
 
 -- --------------------------------------------------------
 
@@ -644,55 +645,55 @@ ALTER TABLE `entities`
 -- AUTO_INCREMENT for table `iar_items`
 --
 ALTER TABLE `iar_items`
-  MODIFY `iar_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `iar_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT for table `ics_items`
 --
 ALTER TABLE `ics_items`
-  MODIFY `ics_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `ics_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `inspection_acceptance_reports`
 --
 ALTER TABLE `inspection_acceptance_reports`
-  MODIFY `iar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `iar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `inventory_custodian_slips`
 --
 ALTER TABLE `inventory_custodian_slips`
-  MODIFY `ics_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `ics_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=232;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=235;
 
 --
 -- AUTO_INCREMENT for table `par_items`
 --
 ALTER TABLE `par_items`
-  MODIFY `par_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `par_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `property_acknowledgment_receipts`
 --
 ALTER TABLE `property_acknowledgment_receipts`
-  MODIFY `par_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `par_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `requisition_and_issue_slips`
 --
 ALTER TABLE `requisition_and_issue_slips`
-  MODIFY `ris_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `ris_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `ris_items`
 --
 ALTER TABLE `ris_items`
-  MODIFY `ris_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `ris_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `suppliers`
